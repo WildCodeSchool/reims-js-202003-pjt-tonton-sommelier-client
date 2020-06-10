@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import PageScan from './components/PageScan';
-import LesVins from './components/LesVins';
+import TypeWines from './components/TypeWines';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <PageScan />
-        <LesVins />
+        <TypeWines />
       </header>
     </div>
   );
