@@ -18,6 +18,7 @@ function BorderTopCard() {
           src="https://user-images.githubusercontent.com/57908921/84251814-25c85800-ab0e-11ea-8d89-6e77d572b4f3.png"
           alt="CardImgTP"
           className="CardImgTP"
+          id="CardImg"
         />
       </div>
     </div>
