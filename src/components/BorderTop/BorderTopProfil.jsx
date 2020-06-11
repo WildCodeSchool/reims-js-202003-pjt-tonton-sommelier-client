@@ -1,7 +1,7 @@
 import React from 'react';
 import './BorderTop.css';
 
-function BorderTopCard() {
+function BorderTopProfil() {
   return (
     <div className="">
       <div className="BorderTopColor">
@@ -15,14 +15,14 @@ function BorderTopCard() {
       <div className="ImgCenterBorderTop">
         <img
           width=""
-          src="https://user-images.githubusercontent.com/57908921/84251814-25c85800-ab0e-11ea-8d89-6e77d572b4f3.png"
+          src="https://user-images.githubusercontent.com/57908921/84266976-a777b000-ab25-11ea-8327-29d873625bd1.png"
           alt="CardImgTP"
           className="CardImgTP"
-          id="CardImg"
+          id="ProfilImg"
         />
       </div>
     </div>
   );
 }
 
-export default BorderTopCard;
+export default BorderTopProfil;
