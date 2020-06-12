@@ -8,7 +8,7 @@ function TypeWines() {
     Axios.get('http://localhost:8000/boxes')
       .then((response) => response.data)
       .then((data) => {
-        setBoxes({ boxes: data });
+        setBoxes({ data });
       });
   }
 
@@ -16,6 +16,8 @@ function TypeWines() {
     <div>
       <h1> LES VINS ROUGES </h1>
       <button className="button" type="button" onClick={() => handleClick()}> play </button>
+      {boxes.map((box) => <p>{box.name}</p>)}
+      <hr />
       <button className="button" type="button"> 1 </button>
       <button className="button" type="button"> 2 </button>
       <button className="button" type="button"> 3 </button>
