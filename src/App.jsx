@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import BorderTopCard from './components/BorderTop/BorderTopCard';
+import HomePage from './components/HomePage/Home';
 
 function App() {
   return (
     <>
-      <BorderTopCard />
+      <HomePage />
     </>
   );
 }

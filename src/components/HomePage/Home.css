@@ -1,0 +1,34 @@
+.TittleHome{
+    text-align: center;
+}
+
+.QrCodeReaderHome{
+    display: flex;
+    flex-direction: column;
+}
+
+.QrCodeReaderImg{
+    display: flex;
+    justify-content: center;
+    border-bottom: #00A19A solid 0.5vh;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;
+}
+
+.ImgPhoto{
+    margin-bottom: 2vh;
+}
+
+.btn:hover {
+    background-color: #00A19A !important;
+}
+
+.btn-secondary {
+    background-color: #00A19A !important;
+}
+
+input{
+    background-color: #ECEFF1 !important;
+}

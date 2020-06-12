@@ -20,6 +20,10 @@
     width: 15%;
 }
 
+#PaddingHome{
+    padding: 3vh;
+}
+
 @media screen and (min-width: 768px) {
     .ArrowImgTP {
         padding: 2.5vh;
@@ -28,5 +32,9 @@
     .CardImgTP {
         margin-top: -10%;
         width: 12%;
+    }
+
+    #PaddingHome{
+        padding: 3.6vh;
     }
   }
