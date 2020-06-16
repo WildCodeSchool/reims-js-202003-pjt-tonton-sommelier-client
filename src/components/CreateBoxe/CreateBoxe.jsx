@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function CreateCoffret() {
+function CreateBoxe() {
   const [value, setValue] = useState('red');
 
   function handleChange(event) {
@@ -35,4 +35,4 @@ function CreateCoffret() {
   );
 }
 
-export default CreateCoffret;
+export default CreateBoxe;
