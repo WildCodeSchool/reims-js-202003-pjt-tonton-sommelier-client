@@ -3,15 +3,15 @@ import './App.css';
 import TypeWines from './components/TypeWines';
 import BorderTopCard from './components/BorderTop/BorderTopCard';
 import CreateCoffret from './components/CreateCofret/CreateCoffret';
+import HomePage from './components/HomePage/Home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <BorderTopCard />
-        <TypeWines />
-        <CreateCoffret />
-      </header>
+      <BorderTopCard />
+      <TypeWines />
+      <CreateCoffret />
+      <HomePage />
     </div>
   );
 }
