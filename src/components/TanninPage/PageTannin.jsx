@@ -1,20 +1,16 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Link,
 } from 'react-router-dom';
-import BorderTopCard from './BorderTop/BorderTopCard';
+import BorderTopCard from '../BorderTop/BorderTopCard';
 
 function PageTannin() {
   return (
     <div>
-      <Link to="/PageScan">
+      <Link to="/wine">
         <BorderTopCard />
       </Link>
-
-      <img src="https://via.placeholder.com/100" alt="tanin" />
-
-      <p>Qu&apos;est-ce que le tannin dans un vin </p>
+      <h1>Qu&apos;est-ce que le tannin dans un vin </h1>
       <img src="https://via.placeholder.com/200" alt="tanin" />
       <p>
         Le tanin à un goût sec et astringent*

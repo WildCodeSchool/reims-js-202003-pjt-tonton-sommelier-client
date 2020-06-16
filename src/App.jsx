@@ -4,65 +4,38 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from 'react-router-dom';
-import PageScan from './components/PageScan';
-import PageRaisin from './components/PageRaisin';
-import PageTonneau from './components/PageTonneau';
-import PageCouverts from './components/PageCouverts';
-import PageRegion from './components/PageRegion';
-import PageHistoire from './components/PageHistoire';
-import PageTannin from './components/PageTannin';
-import PageVue from './components/PageVue';
-import PageNez from './components/PageNez';
-import PageGout from './components/PageGout';
+import PageCouverts from './components/CouvertsPages/PageCouverts';
+import PageGout from './components/GoutPage/PageGout';
+import PageHistoire from './components/HistoirePage/PageHistoire';
+import PageNez from './components/NezPage/PageNez';
+import PageRaisin from './components/RaisinPage/PageRaisin';
+import PageRegion from './components/RegionPage/PageRegion';
+import PageScan from './components/ScanPage/PageScan';
+import PageTannin from './components/TanninPage/PageTannin';
+import PageTonneau from './components/TonneauPage/PageTonneau';
+import PageVue from './components/VuePage/PageVue';
+import TypeWines from './components/WinesType/TypeWines';
 
 export default function App() {
   return (
-    <div>
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="PageScan">Scan</Link>
-              </li>
 
-              <ul>
-                <li><Link to="PageRaisin">Raisin</Link></li>
-                <li><Link to="PageTonneau">Tonneau</Link></li>
-                <li><Link to="PageCouverts">Couverts</Link></li>
-                <li><Link to="PageHistoire">Histoire</Link></li>
-                <li><Link to="PageRegion">Region</Link></li>
-                <li><Link to="PageTannin">Tannin</Link></li>
-                <li><Link to="PageVue">Vue</Link></li>
-                <li><Link to="PageNez">Nez</Link></li>
-                <li><Link to="PageGout">Goût</Link></li>
-              </ul>
-            </ul>
-          </nav>
-
-          {/* A <Switch> looks through its children <Route>s and
+    <Router>
+      {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/PageScan" component={PageScan} />
-            <Route path="/PageRaisin" component={PageRaisin} />
-            <Route path="/PageTonneau" component={PageTonneau} />
-            <Route path="/PageCouverts" component={PageCouverts} />
-            <Route path="/PageHistoire" component={PageHistoire} />
-            <Route path="/PageGout" component={PageGout} />
-            <Route path="/PageTannin" component={PageTannin} />
-            <Route path="/PageRegion" component={PageRegion} />
-            <Route path="/PageVue" component={PageVue} />
-            <Route path="/PageNez" component={PageNez} />
-            <Route path="/" />
-          </Switch>
-        </div>
-      </Router>
-
-    </div>
+      <Switch>
+        <Route path="/couverts" component={PageCouverts} />
+        <Route path="/gout" component={PageGout} />
+        <Route path="/histoire" component={PageHistoire} />
+        <Route path="/nez" component={PageNez} />
+        <Route path="/raisin" component={PageRaisin} />
+        <Route path="/region" component={PageRegion} />
+        <Route path="/tannin" component={PageTannin} />
+        <Route path="/tonneau" component={PageTonneau} />
+        <Route path="/vue" component={PageVue} />
+        <Route path="/wine" component={TypeWines} />
+        <Route path="/" component={PageScan} />
+      </Switch>
+    </Router>
   );
 }
