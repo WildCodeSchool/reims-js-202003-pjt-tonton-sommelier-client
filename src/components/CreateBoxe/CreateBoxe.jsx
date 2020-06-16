@@ -11,7 +11,7 @@ function CreateBoxe() {
     <div>
       <form action="" method="get" className="">
         <div className="">
-          <label htmlFor="nameOfCoffret">Nom du coffret : </label>
+          <label htmlFor="nameOfBoxes">Nom du coffret : </label>
           <input type="text" name="name" id="name" required />
         </div>
         <div className="">
@@ -20,7 +20,7 @@ function CreateBoxe() {
         </div>
         <div>
           <label htmlFor="TypeOfBottle">
-            Type de la bouteille :
+            Categorie de la bouteille :
             <select value={value} onChange={(event) => handleChange(event)}>
               <option value="red"> rouge </option>
               <option value="white"> blanc </option>
