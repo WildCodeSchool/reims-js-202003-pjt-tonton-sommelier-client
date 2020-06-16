@@ -9,10 +9,12 @@ function CreateCoffret() {
           Nom du coffret:
           <imput type="text" name="name" />
         </label>
+        <br />
         <label>
           Nom de la bouteille:
           <imput type="text" name="name" />
         </label>
+        <br />
         <input type="submit" value="Envoyer" />
       </form>
     </div>
