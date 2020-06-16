@@ -27,7 +27,8 @@ function CreateCoffret() {
               <option value="sparkling"> pétillant </option>
             </select>
           </label>
-
+          <br />
+          <input type="submit" value="Envoyer" />
         </div>
       </form>
     </div>
