@@ -1,15 +1,11 @@
 import React from 'react';
 import './App.css';
-import TypeWines from './components/TypeWines';
-import BorderTopCard from './components/BorderTop/BorderTopCard';
+import HomePage from './components/HomePage/Home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <TypeWines />
-        <BorderTopCard />
-      </header>
+      <HomePage />
     </div>
   );
 }

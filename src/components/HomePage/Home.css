@@ -1,0 +1,69 @@
+.TittleHome{
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.QrCodeReaderHome{
+    display: flex;
+    flex-direction: column;
+}
+
+.QrCodeReaderImg{
+    display: flex;
+    justify-content: center;
+    border-bottom: #00A19A solid 0.5vh;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;
+}
+
+.ImgPhoto{
+    margin-bottom: 2vh;
+}
+
+.btn:hover {
+    background-color: #00A19A !important;
+}
+
+.btn-secondary {
+    background-color: #00A19A !important;
+}
+
+input{
+    background-color: #ECEFF1 !important;
+}
+
+.ImgTontonHomeContent {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5vh;
+    margin-bottom: 3vh;
+}
+
+.InputHomeContent {
+    margin: 1vh;
+}
+
+@media screen and (max-width: 414px) and (max-height: 736px){
+    .ImgTontonHome {
+        width: 35%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .InputHomeContent {
+        margin: 6vh;
+    }
+
+    .TittleHome{
+        font-size: 2.5rem
+    }
+
+    .form-control{
+        padding: 3vh;
+        font-size: 2rem !important;
+    }
+
+    .btn {
+        font-size: 2rem !important;
+    }
+  }
