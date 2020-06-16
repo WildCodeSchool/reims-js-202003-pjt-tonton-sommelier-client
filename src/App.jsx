@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import TypeWines from './components/TypeWines';
+import TypeWines from './components/WineSelector/TypeWines';
 import BorderTopCard from './components/BorderTop/BorderTopCard';
 import CreateCoffret from './components/CreateCofret/CreateCoffret';
 import HomePage from './components/HomePage/Home';
