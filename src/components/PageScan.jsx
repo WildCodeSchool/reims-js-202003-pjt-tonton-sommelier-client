@@ -11,11 +11,13 @@ function PageScan() {
   return (
     <div>
         <BorderTopCard />
-        <h1>L&apos;Acceuil</h1> 
-        <Link to="/boxes/1">
-          <button className="button" type="button">QRCODE</button>
-        </Link> 
-        
+        <h1>L&apos;Accueil</h1> 
+        <Link className="code" to="/boxes/1">
+          QR CODE
+        </Link>
+        <Link className="code" to="/boxes/1">
+          CODE NUM
+        </Link>        
     </div>
     
   );
