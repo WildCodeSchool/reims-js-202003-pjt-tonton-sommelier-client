@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1vh;
 }
 
 .ImgOeilNez {
@@ -30,7 +31,7 @@
     border-bottom: #00A19A solid 0.3vh;
     margin-left: 4vh;
     margin-right: 4vh;
-    margin-bottom: 8vh;
+    margin-bottom: 7vh;
     padding-bottom: 4vh;
 }
 
