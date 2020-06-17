@@ -1,17 +1,27 @@
 import React from 'react';
 import './App.css';
-import TypeWines from './components/TypeWines';
-import BorderTopCard from './components/BorderTop/BorderTopCard';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  } from 'react-router-dom';
 
-function App() {
+import PageScan from './components/PageScan';
+import Description from './components/Description';
+import Box from './components/Box';
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <TypeWines />
-        <BorderTopCard />
-      </header>
-    </div>
+
+    <Router>
+      <Switch>
+        <Route path="/boxes/:boxId" component={Box} /> 
+        <Route path="/descriptions/:descriptionId" component={Description} />
+        <Route path="/" component={PageScan} />
+      </Switch>
+    </Router>
   );
 }
 
-export default App;
+
