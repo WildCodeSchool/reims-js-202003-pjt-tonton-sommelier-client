@@ -8,7 +8,7 @@ import BorderTopCard from './BorderTopCard';
 
 const Description = () => {
   const { descriptionId } = useParams();
-  const [description, setDescription] = useState({});
+  const [description, setDescription] = useState(null);
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/boxes/${descriptionId}`)
@@ -25,7 +25,7 @@ const Description = () => {
       <h1>
         hello from
       </h1>
-      <p>{description !== {} ? description.name : 'no content'}</p>
+      <p>{description !== null ? description.name : 'no content'}</p>
     </div>
   );
 };
