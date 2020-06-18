@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
 } from '@fortawesome/free-solid-svg-icons';
-import BorderTopHome from '../BorderTop/BorderTopHome';
+import BorderTopHome from './BorderTopHome';
 
 function HomePage() {
   return (
