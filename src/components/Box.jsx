@@ -6,7 +6,6 @@ import {
 // import HomePage from './Home';
 import barique from '../Images/barique.png';
 import raisin from '../Images/raisin.png';
-import couvert from '../Images/couvert.png';
 import france from '../Images/france.png';
 import book from '../Images/book.png';
 import oeil from '../Images/oeil.png';
@@ -35,11 +34,6 @@ function Box() {
           <div className="CercleBtn">
             <Link className="BtnLink" to="/descriptions/2">
               <img src={barique} alt="Barique" className="BtnImg" />
-            </Link>
-          </div>
-          <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions/3">
-              <img src={couvert} alt="Couvert" className="BtnImg" />
             </Link>
           </div>
         </div>
