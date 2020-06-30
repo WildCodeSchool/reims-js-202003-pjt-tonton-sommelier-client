@@ -25,8 +25,8 @@ class Register extends React.Component {
     const url = 'http://localhost:8000/users/register';
 
     axios.post(url, {
-      username: username,
-      password: password
+      username,
+      password,
     })
       .then((res) => res.data)
       .then((res) => {
