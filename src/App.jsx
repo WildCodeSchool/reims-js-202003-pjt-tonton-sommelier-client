@@ -5,18 +5,19 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import PageScan from './components/PageScan';
+import HomePage from './components/Home';
 import Description from './components/Description';
 import Box from './components/Box';
+import Register from './components/Register';
 
 export default function App() {
   return (
-
     <Router>
       <Switch>
         <Route path="/boxes/:boxId" component={Box} />
         <Route path="/descriptions/:descriptionId" component={Description} />
-        <Route path="/" component={PageScan} />
+        <Route path="/Register" component={Register} />
+        <Route path="/" component={HomePage} />
       </Switch>
     </Router>
   );
