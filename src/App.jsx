@@ -16,7 +16,7 @@ export default function App() {
       <Switch>
         <Route path="/boxes/:boxId" component={Box} />
         <Route path="/descriptions/:descriptionId" component={Description} />
-        <Route path="/Register" component={Register} />
+        <Route path="/register" component={Register} />
         <Route path="/" component={HomePage} />
       </Switch>
     </Router>

@@ -31,7 +31,7 @@ function NavBottom() {
           </Link>
         </div>
         <div className="CercleBtnNav">
-          <Link className="BtnLink" to="/Register">
+          <Link className="BtnLink" to="/register">
             <img src={profil} alt="Wine" className="BtnImg" />
           </Link>
         </div>
