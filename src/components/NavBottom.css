@@ -1,0 +1,24 @@
+.NavBottom {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.CercleBtnNav {
+    border-radius: 50%;
+    width: 9.345794392523365vh;
+    height: 9.345794392523365vh;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh;
+    background-color: #00A19A;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.IconHome {
+    font-size: 3.2rem;
+    color: white;
+}

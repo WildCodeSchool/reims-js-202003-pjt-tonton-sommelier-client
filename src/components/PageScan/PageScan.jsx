@@ -1,7 +1,7 @@
 import React from 'react';
 import QrReader from 'react-qr-reader';
-import BorderTopCard from '../BorderTop/BorderTopCard';
-import './PageScan.css';
+import BorderTopCard from '../BorderTopCard';
+import '../PageScan.css';
 
 class PageScan extends React.Component {
   constructor(props) {
