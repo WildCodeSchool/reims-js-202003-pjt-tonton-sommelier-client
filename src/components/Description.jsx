@@ -11,7 +11,7 @@ const Description = () => {
   const [description, setDescription] = useState(null);
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/boxes/${descriptionId}`)
+    Axios.get(`http://localhost:8000/descriptions/${descriptionId}`)
       .then((response) => {
         setDescription(response.data);
       });
@@ -25,7 +25,8 @@ const Description = () => {
       <h1>
         hello from
       </h1>
-      <p>{description !== null ? description.name : 'no content'}</p>
+      <p>{description !== null ? description.content : 'no content'}</p>
+      {description !== null ? <img src={description.type} alt={description.content} /> : <p>no image</p>}
     </div>
   );
 };
