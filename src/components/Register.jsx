@@ -31,6 +31,24 @@ class Register extends React.Component {
       .then((res) => res.data)
       .then((res) => {
         alert(`Vôtre compte ${res.username} a bien été enregistré !`);
+        axios.post('http://localhost:8000/users/login', {
+          username,
+          password,
+        })
+          .then((res) => res.data)
+          .then((res) => {
+            console.log(res);
+            axios.get('http://localhost:8000/', { headers: { Authorization: `Bearer ${res.token}` } })
+              .then((res) => res.data)
+              .then((res) => {
+                console.log(res);
+              });
+
+          })
+    
+          .catch(() => {
+            alert(`Erreur lors de l'ajout d'un compte : ${e.message}`);
+          });
       })
 
       .catch(() => {
