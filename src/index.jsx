@@ -1,25 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createStore, combineReducers } from 'redux';
-import { Provider } from 'react-redux';
-import tokenReducer from './redux/tokenReducer'
+import tokenReducer from './redux/tokenReducer';
 
 const rootReducer = combineReducers({
-  token: tokenReducer
+  token: tokenReducer,
   // <other reducers here>
 });
-const store = createStore(rootReducer);
+const store = createStore(rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-
-ReactDOM.render( 
+ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
-    </Provider>,
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
