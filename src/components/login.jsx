@@ -1,8 +1,11 @@
 import React from 'react';
 import {
   Input,
+  Button,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './Login.css';
 
 class Login extends React.Component {
   constructor(props) {
@@ -41,11 +44,19 @@ class Login extends React.Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div className="FormEmployee">
+      <div className="FormEmployee FormContent">
+        <div className="ImgProfilContent">
+          <img
+            width=""
+            src="https://user-images.githubusercontent.com/57908921/84266976-a777b000-ab25-11ea-8327-29d873625bd1.png"
+            alt="CardImgTP"
+            className="ImgProfilLogin"
+            id="ProfilImg"
+          />
+        </div>
         <form onSubmit={this.submitForm}>
-          <fieldset>
-            <div className="form-data">
-              <label htmlFor="username">Username</label>
+            <div className="form-data DivInput">
+              <label htmlFor="username" className="LabelForm">Nom d'utilisateur</label>
               <Input
                 type="text"
                 id="username"
@@ -55,8 +66,8 @@ class Login extends React.Component {
                 required
               />
             </div>
-            <div className="form-data">
-              <label htmlFor="password">Password</label>
+            <div className="form-data DivInput">
+              <label htmlFor="password" className="LabelForm">Mot de passe</label>
               <Input
                 type="password"
                 id="password"
@@ -66,10 +77,16 @@ class Login extends React.Component {
                 required
               />
             </div>
-            <div className="form-data">
-              <input type="submit" value="Envoyer" />
+            <div className="form-data BtnLoginGroupe">
+              <Button type="submit" className="BtnLogin">
+                Connexion
+              </Button>
+              <Button className="BtnRegister">
+                <Link to="/register" className="LinkRegister">
+                  Créez un compte
+                </Link>
+              </Button>
             </div>
-          </fieldset>
         </form>
       </div>
     );
