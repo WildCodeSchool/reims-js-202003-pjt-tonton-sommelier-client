@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { changeToken } from '../redux/tokenReducer';
 import {
   Input,
 } from 'reactstrap';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
-class Register extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-      password: '',
-    };
-  }
+const RegisterContainer = ({ dispatch }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  onChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  }
+  const onChangeUsername = (e) => {
+    setUsername(
+      e.target.value,
+    );
+  };
 
-  submitForm = (e) => {
+  const onChangePassword = (e) => {
+    setPassword(
+      e.target.value,
+    );
+  };
+
+  function submitForm(e) {
     e.preventDefault();
-    const { username, password } = this.state;
     const url = 'http://localhost:8000/users/register';
 
     axios.post(url, {
@@ -37,15 +39,15 @@ class Register extends React.Component {
         })
           .then((res) => res.data)
           .then((res) => {
+            dispatch(changeToken (res.token));
             console.log(res);
             axios.get('http://localhost:8000/', { headers: { Authorization: `Bearer ${res.token}` } })
               .then((res) => res.data)
               .then((res) => {
                 console.log(res);
               });
-
           })
-    
+
           .catch(() => {
             alert(`Erreur lors de l'ajout d'un compte : ${e.message}`);
           });
@@ -56,43 +58,41 @@ class Register extends React.Component {
       });
   }
 
-  render() {
-    const { username, password } = this.state;
-    return (
-      <div className="FormEmployee">
-        <form onSubmit={this.submitForm}>
-          <fieldset>
-            <legend>Informations</legend>
-            <div className="form-data">
-              <label htmlFor="username">Username</label>
-              <Input
-                type="text"
-                id="username"
-                name="username"
-                onChange={this.onChange}
-                value={username}
-                required
-              />
-            </div>
-            <div className="form-data">
-              <label htmlFor="password">Password</label>
-              <Input
-                type="password"
-                id="password"
-                name="password"
-                onChange={this.onChange}
-                value={password}
-                required
-              />
-            </div>
-            <div className="form-data">
-              <input type="submit" value="Envoyer" />
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="FormEmployee">
+      <form onSubmit={submitForm}>
+        <fieldset>
+          <legend>Informations</legend>
+          <div className="form-data">
+            <label htmlFor="username">Username</label>
+            <Input
+              type="text"
+              id="username"
+              name="username"
+              onChange={onChangeUsername}
+              value={username}
+              required
+            />
+          </div>
+          <div className="form-data">
+            <label htmlFor="password">Password</label>
+            <Input
+              type="password"
+              id="password"
+              name="password"
+              onChange={onChangePassword}
+              value={password}
+              required
+            />
+          </div>
+          <div className="form-data">
+            <input type="submit" value="Envoyer" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  );
+};
 
+const Register = connect()(RegisterContainer);
 export default Register;
