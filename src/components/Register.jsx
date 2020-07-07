@@ -102,7 +102,7 @@ const RegisterContainer = ({ dispatch }) => {
           </Button>
           <Button className="BtnRegister">
           <Link to="/" className="LinkRegister">
-              J&apos;ai déjà un compte
+              J&apos;ai déjà un compte.
             </Link>
           </Button>
         </div>
