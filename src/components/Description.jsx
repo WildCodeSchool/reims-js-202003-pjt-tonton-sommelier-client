@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+
 import {
   Link,
   useParams,
 } from 'react-router-dom';
+
 import Axios from 'axios';
 import BorderTopCard from './BorderTopCard';
 
-const Description = () => {
-  const { descriptionId } = useParams();
+const Description = (props) => {
   const [description, setDescription] = useState(null);
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/descriptions/${descriptionId}`)
+    Axios.get(`http://localhost:8000/category_content/${props.type}`)
       .then((response) => {
         setDescription(response.data);
       });
-  }, [descriptionId]);
+  }, [props.type]);
 
   return (
     <div>
@@ -25,10 +27,18 @@ const Description = () => {
       <h1>
         hello from
       </h1>
-      <p>{description !== null ? description.content : 'no content'}</p>
-      {description !== null ? <img src={description.type} alt={description.content} /> : <p>no image</p>}
+      <div>{
+        description !== null ? description.map(description => <p>{description.content}</p>) : ''
+      }
+      </div>
+      <div></div>
+      <div></div>
     </div>
   );
 };
 
-export default Description;
+const mapStateToProps = (state) => ({
+  type: state.reducer.type,
+});
+
+export default connect(mapStateToProps)(Description);

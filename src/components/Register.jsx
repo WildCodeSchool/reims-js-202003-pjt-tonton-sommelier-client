@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { changeToken } from '../redux/tokenReducer';
+import { changeToken } from '../redux/Reducer';
 import './Login.css';
 
 const RegisterContainer = ({ dispatch }) => {

@@ -10,6 +10,7 @@ import Description from './components/Description';
 import Box from './components/Box';
 import Register from './components/Register';
 import Login from './components/Login';
+import DebutJeu from './components/DebutJeu';
 
 export default function App() {
   return (
@@ -18,8 +19,9 @@ export default function App() {
         <Switch>
           <Route path="/home" component={HomePage} />
           <Route path="/boxes/:boxId" component={Box} />
-          <Route path="/descriptions/:descriptionId" component={Description} />
+          <Route path="/descriptions" component={Description} />
           <Route path="/register" component={Register} />
+          <Route path="/debutjeu" component={DebutJeu} />
           <Route path="/login" component={Login} />
           <Route path="/" component={Login} />
         </Switch>

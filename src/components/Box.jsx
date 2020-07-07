@@ -17,12 +17,11 @@ import './Box.css';
 
 function Box() {
   // const { boxId } = useParams();
+  
+
   return (
     <div>
-      {/* <Link to="/">
-        <HomePage />
-      </Link> */}
-      <Link className="code" to="/home">
+      <Link className="code" to="/debutjeu">
         <BorderTopCard />
       </Link>
       <h3 className="H3Box">les vins rouges</h3>

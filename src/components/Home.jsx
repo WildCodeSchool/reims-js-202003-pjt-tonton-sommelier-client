@@ -37,7 +37,7 @@ function HomePage() {
             Scannez le QRcode
             Ou entrez le code :
           </h3>
-          <Link className="code" to="/boxes/1">
+          <Link className="code" to="/debutjeu">
             <div className="QrCodeReaderImg">
               <img
                 src="https://static.thenounproject.com/png/1433173-200.png"
@@ -49,7 +49,7 @@ function HomePage() {
           <div className="InputHomeContent">
             <InputGroup>
               <Input placeholder="Entrez vôtre code" />
-              <Link className="code" to="/boxes/1">
+              <Link className="code" to="/debutjeu">
                 <InputGroupAddon addonType="append"><Button color="secondary"><FontAwesomeIcon icon={faCheck} id="IconCheck" /></Button></InputGroupAddon>
               </Link>
             </InputGroup>

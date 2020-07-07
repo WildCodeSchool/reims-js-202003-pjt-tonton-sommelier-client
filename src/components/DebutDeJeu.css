@@ -1,0 +1,40 @@
+.contenuBoutons {
+    display: flex;
+    flex-direction: column;
+}
+
+.rougeEtVert {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-bottom: 3vh;
+
+}
+.boutonVert{
+    height: 5vh;
+    width: 5vh;
+    background-color: green;
+    border-radius: 90px;
+    width: 9.3vh;
+    height: 9.3vh;
+}
+
+.boutonRouge{
+    height: 5vh;
+    width: 5vh;
+    background-color: red;
+    border-radius: 90px;
+    width: 9.3vh;
+    height: 9.3vh;
+}
+
+.oeuilEtNez {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bouche {
+    display: flex;
+    justify-content: center;
+}
