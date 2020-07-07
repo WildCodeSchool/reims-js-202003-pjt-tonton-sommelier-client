@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-
-import { Link } from 'react-router-dom';
 import {
   Input,
   Button,
 } from 'reactstrap';
+import {
+  Link,
+} from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import { changeToken } from '../redux/tokenReducer';
 import './Login.css';
 
-const RegisterContainer = ({ dispatch }) => {
+const LoginContainer = ({ dispatch }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -28,37 +29,20 @@ const RegisterContainer = ({ dispatch }) => {
 
   function submitForm(e) {
     e.preventDefault();
-    const url = 'http://localhost:8000/users/register';
 
-    axios.post(url, {
+    axios.post('http://localhost:8000/users/login', {
       username,
       password,
     })
       .then((res) => res.data)
       .then((res) => {
-        alert(`Vôtre compte ${res.username} a bien été enregistré !`);
-        axios.post('http://localhost:8000/users/login', {
-          username,
-          password,
-        })
+        dispatch(changeToken(res.token));
+        console.log(res);
+        axios.get('http://localhost:8000/', { headers: { Authorization: `Bearer ${res.token}` } })
           .then((res) => res.data)
           .then((res) => {
-            dispatch(changeToken(res.token));
-            console.log(res);
-            axios.get('http://localhost:8000/', { headers: { Authorization: `Bearer ${res.token}` } })
-              .then((res) => res.data)
-              .then((res) => {
-                window.location.replace('http://localhost:3000/home');
-              });
-          })
-
-          .catch(() => {
-            alert(`Erreur lors de l'ajout d'un compte : ${e.message}`);
+            window.location.replace('http://localhost:3000/home');
           });
-      })
-
-      .catch(() => {
-        alert(`Erreur lors de l'ajout d'un compte : ${e.message}`);
       });
   }
 
@@ -75,7 +59,7 @@ const RegisterContainer = ({ dispatch }) => {
       </div>
       <form onSubmit={submitForm}>
         <div className="form-data DivInput">
-          <label htmlFor="username" className="LabelForm">Nom d&apos;utilisateur</label>
+          <label htmlFor="username" className="LabelForm">Nom d'utilisateur</label>
           <Input
             type="text"
             id="username"
@@ -97,12 +81,12 @@ const RegisterContainer = ({ dispatch }) => {
           />
         </div>
         <div className="form-data BtnLoginGroupe">
-          <Button type="submit" className="BtnRegister">
-            Continuer
+          <Button type="submit" className="BtnLogin">
+            Connexion
           </Button>
           <Button className="BtnRegister">
-          <Link to="/" className="LinkRegister">
-              J&apos;ai déjà un compte
+            <Link to="/register" className="LinkRegister">
+              Créez un compte
             </Link>
           </Button>
         </div>
@@ -111,5 +95,5 @@ const RegisterContainer = ({ dispatch }) => {
   );
 };
 
-const Register = connect()(RegisterContainer);
-export default Register;
+const Login = connect()(LoginContainer);
+export default Login;

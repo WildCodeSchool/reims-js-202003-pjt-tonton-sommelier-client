@@ -1,0 +1,40 @@
+.BtnRegister, .BtnLogin {
+    background-color: #ECEFF1 !important;
+    color: #00A19A !important;
+    border-color: #ECEFF1 !important;
+    margin: 2vh; 
+}
+
+.LinkRegister {
+    color: #00A19A !important;
+}
+
+.BtnLoginGroupe {
+    display: flex;
+    justify-content: space-around;
+}
+
+.FormContent {
+    background-color: #00A19A !important;
+    flex: 1;
+    padding: 5vh;
+    padding-top: 25vh;
+}
+
+.DivInput {
+    text-align: center;
+}
+
+.LabelForm {
+    margin-top: 2vh;
+    font-size: 1.3rem;
+}
+
+.ImgProfilContent {
+    display: flex;
+    justify-content: center;
+}
+
+.ImgProfilLogin {
+    width: 30%;
+}

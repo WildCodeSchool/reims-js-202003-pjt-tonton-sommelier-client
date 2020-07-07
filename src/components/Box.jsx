@@ -22,7 +22,9 @@ function Box() {
       {/* <Link to="/">
         <HomePage />
       </Link> */}
-      <BorderTopCard />
+      <Link className="code" to="/home">
+        <BorderTopCard />
+      </Link>
       <h3 className="H3Box">les vins rouges</h3>
       <div className="BtnTriangleTop">
         <div className="BtnRaisinBariqueCouvert">
