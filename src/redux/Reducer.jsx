@@ -1,4 +1,9 @@
 /* ------------------- Action -----------------------*/
+const changeCategory = (newCategory) => ({
+  type: 'CHANGE_CATEGORY',
+  newCategory,
+});
+
 const changeType = (newType) => ({
   type: 'CHANGE_TYPE',
   newType,
@@ -10,8 +15,13 @@ const changeToken = (newToken) => ({
 });
 
 /* ------------------- Reducer -----------------------*/
-const typeReducer = (state = { type: null, token: null }, action) => {
+const typeReducer = (state = { type: null, token: null, category: null }, action) => {
   switch (action.type) {
+    case 'CHANGE_CATEGORY':
+      return {
+        ...state,
+        category: action.newCategory,
+      };
     case 'CHANGE_TOKEN':
       return {
         ...state,
@@ -29,5 +39,5 @@ const typeReducer = (state = { type: null, token: null }, action) => {
 };
 
 export default typeReducer;
-export { changeType, changeToken };
+export { changeType, changeToken, changeCategory };
 

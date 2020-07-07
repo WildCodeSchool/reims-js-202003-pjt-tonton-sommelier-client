@@ -13,7 +13,7 @@ const Description = (props) => {
   const [description, setDescription] = useState(null);
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/category_content/${props.type}`)
+    Axios.get(`http://localhost:8000/category/${props.category}/category_content/${props.type}`)
       .then((response) => {
         setDescription(response.data);
       });
@@ -39,6 +39,8 @@ const Description = (props) => {
 
 const mapStateToProps = (state) => ({
   type: state.reducer.type,
+  category: state.reducer.category,
+
 });
 
 export default connect(mapStateToProps)(Description);
