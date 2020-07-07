@@ -40,4 +40,3 @@ const typeReducer = (state = { type: null, token: null, category: null }, action
 
 export default typeReducer;
 export { changeType, changeToken, changeCategory };
-
