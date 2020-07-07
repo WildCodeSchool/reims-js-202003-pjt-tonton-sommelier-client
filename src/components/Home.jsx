@@ -40,7 +40,7 @@ function HomePageContainer({ dispatch}) {
             Scannez le QRcode
             Ou entrez le code :
           </h3>
-          <Link className="code" to="/debutjeu">
+          <Link className="code" to="scan">
             <div className="QrCodeReaderImg">
               <img
                 src="https://static.thenounproject.com/png/1433173-200.png"

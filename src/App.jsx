@@ -11,6 +11,7 @@ import Box from './components/Box';
 import Register from './components/Register';
 import Login from './components/Login';
 import DebutJeu from './components/DebutJeu';
+import PageScan from './components/PageScan';
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/register" component={Register} />
           <Route path="/debutjeu" component={DebutJeu} />
           <Route path="/login" component={Login} />
+          <Route path="/scan" component={PageScan} />
           <Route path="/" component={Login} />
         </Switch>
       </Router>
