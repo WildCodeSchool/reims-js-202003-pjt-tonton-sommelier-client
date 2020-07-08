@@ -2,7 +2,21 @@
     background-color: #ECEFF1 !important;
     color: #00A19A !important;
     border-color: #ECEFF1 !important;
-    margin: 2vh; 
+    margin: 2vh;
+}
+
+.BtnLogin:hover {
+    background-color: #ECEFF1 !important;
+    color: #00A19A !important;
+    border-color: #ECEFF1 !important;
+    margin: 2vh;
+}
+
+.BtnRegister:hover {
+    background-color: #ECEFF1 !important;
+    color: #00A19A !important;
+    border-color: #ECEFF1 !important;
+    margin: 2vh;
 }
 
 .LinkRegister {
@@ -12,13 +26,13 @@
 .BtnLoginGroupe {
     display: flex;
     justify-content: space-around;
+    margin-top: 3vh;
 }
 
 .FormContent {
     background-color: #00A19A !important;
     flex: 1;
     padding: 5vh;
-    padding-top: 25vh;
 }
 
 .DivInput {
@@ -30,11 +44,15 @@
     font-size: 1.3rem;
 }
 
-.ImgProfilContent {
-    display: flex;
-    justify-content: center;
+.ImgProfilLogin {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.ImgProfilLogin {
-    width: 30%;
+.TitleLoginRegister {
+    padding-top: 2vh;
+    font-size: 2rem;
+    text-align: center;
 }
