@@ -5,7 +5,6 @@ import {
   Link,
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
-import bouche from '../Images/bouche.png';
 import './Question.css';
 
 function Questions(props) {
@@ -18,6 +17,14 @@ function Questions(props) {
       });
   }, [props.type]);
 
+  const isCorect = (e) => {
+    if (e.target.value === '1') {
+      console.log('GG');
+    } else {
+      console.log('bhoooooooo');
+    }
+  };
+
   return (
     <>
       <div>
@@ -29,7 +36,7 @@ function Questions(props) {
         <div>
           {
         props.type !== null
-          ? <img className="imageQuestion" src={require(`../Images/${props.type}.png`)} alt="" />
+          ? <img className="imageStyle" src={require(`../Images/${props.type}.png`)} alt="" />
           : ''
       }
         </div>
@@ -43,7 +50,7 @@ function Questions(props) {
           {
           descriptions !== null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <button className="button1" type="button">{description.content}</button>)
+            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e)=> isCorect(e)}>{description.content}</button>)
             : ''
         }
         </div>

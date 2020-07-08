@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Link,
   // useParams,
@@ -16,7 +16,6 @@ import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
 
 function DebutJeuContainer({ dispatch }) {
-
   return (
     <div>
       <Link to="/home">
@@ -61,4 +60,3 @@ function DebutJeuContainer({ dispatch }) {
 
 const DebutJeu = connect()(DebutJeuContainer);
 export default DebutJeu;
-

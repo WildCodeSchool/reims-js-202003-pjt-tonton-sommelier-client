@@ -13,7 +13,7 @@ import Login from './components/Login';
 import Questions from './components/Questions';
 import DebutJeu from './components/DebutJeu';
 import PageScan from './components/PageScan';
-import ChoixQuestion from './components/ChoixQuestion'
+import ChoixQuestion from './components/ChoixQuestion';
 
 export default function App() {
   return (

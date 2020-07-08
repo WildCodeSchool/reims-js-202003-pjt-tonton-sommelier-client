@@ -4,3 +4,8 @@
     justify-content: center;
     align-items: center;
 }
+
+.imageStyle {
+    height: 20vh;
+    width: 20wh;
+}
