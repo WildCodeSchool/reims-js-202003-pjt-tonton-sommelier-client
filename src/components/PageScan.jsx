@@ -29,7 +29,7 @@ const PageScan = ({ dispatch }) => {
 
   return (
     <div>
-      <BorderTopCard />
+      <Link to="/home"><BorderTopCard /></Link>
       <div>
         <p className="TextPageScan">Mettez la caméra en face du QR Code</p>
       </div>

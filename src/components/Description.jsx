@@ -21,18 +21,19 @@ const Description = (props) => {
 
   return (
     <div>
-      <Link to="/boxes/1">
+      <Link to="/debutjeu">
         <BorderTopCard />
       </Link>
       <h1>
         hello from
       </h1>
-      <div>{
-        description !== null ? description.map(description => <p>{description.content}</p>) : ''
+      <div>
+        {
+        description !== null ? description.map((description) => <p>{description.content}</p>) : ''
       }
       </div>
-      <div></div>
-      <div></div>
+      <div />
+      <div />
     </div>
   );
 };

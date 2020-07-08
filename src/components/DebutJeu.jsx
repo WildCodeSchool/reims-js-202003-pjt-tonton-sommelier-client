@@ -25,12 +25,12 @@ function DebutJeuContainer({ dispatch }) {
       <div className="contenuBoutons">
         <div className="rougeEtVert">
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/boxes/1">
+            <Link className="BtnLink" to="/choixquestion">
               <div className="boutonVert" />
             </Link>
           </div>
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/boxes/1">
+            <Link className="BtnLink" to="/choixquestion">
               <div className="boutonRouge" />
             </Link>
           </div>
