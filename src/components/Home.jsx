@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { changeCategory } from '../redux/Reducer';
+
 import './Home.css';
 import {
   Link,
@@ -16,7 +19,7 @@ import {
 import BorderTopHome from './BorderTopHome';
 import NavBottom from './NavBottom';
 
-function HomePage() {
+function HomePageContainer({ dispatch}) {
   return (
     <div className="AppContent">
       <Link to="/" className="LinkRegister">
@@ -49,7 +52,7 @@ function HomePage() {
           <div className="InputHomeContent">
             <InputGroup>
               <Input placeholder="Entrez vôtre code" />
-              <Link className="code" to="/boxes/1">
+              <Link className="code" to="/debutjeu" onClick={() => dispatch(changeCategory('1'))}>
                 <InputGroupAddon addonType="append"><Button color="secondary"><FontAwesomeIcon icon={faCheck} id="IconCheck" /></Button></InputGroupAddon>
               </Link>
             </InputGroup>
@@ -61,4 +64,5 @@ function HomePage() {
   );
 }
 
+const HomePage = connect()(HomePageContainer);
 export default HomePage;
