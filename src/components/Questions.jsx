@@ -26,7 +26,7 @@ function Questions(props) {
       <img className="imageQuestion" src="" alt="" />
       <p>{}</p>
       <div>
-        {questions.map(question => <p>{question.content}</p>)}
+        {questions.map((question) => <p>{question.content}</p>)}
       </div>
       <button className="button1" type="button"> réponse1 </button>
       <button className="button2" type="button"> réponse2 </button>
