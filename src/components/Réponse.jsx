@@ -6,10 +6,8 @@ import {
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
 import './QuestioRéponse.css';
-import { changeAnswer } from '../redux/Reducer';
 
-
-function QuestionsContainer({dispatch, ...props}) {
+function Réponse (props) {
   const [descriptions, setDescriptions] = useState(null);
 
   useEffect(() => {
@@ -19,14 +17,6 @@ function QuestionsContainer({dispatch, ...props}) {
       });
   }, [props.type]);
 
-  const isCorect = (e) => {
-    if (e.target.value === '1') {
-      dispatch(changeAnswer(true));
-    } else {
-      dispatch(changeAnswer(false));
-    }
-  };
-
   return (
     <>
       <div>
@@ -35,22 +25,16 @@ function QuestionsContainer({dispatch, ...props}) {
         </Link>
       </div>
       <div className="questionStyle">
-        <div>
-          {
-        props.type != null
-          ? <img className="imageStyle" src={require(`../Images/${props.type}.png`)} alt="" />
-          : ''
-      }
-        </div>
+        <div>Désolé, la réponse était :</div>
         {
-        descriptions != null ? descriptions
+        descriptions !== null ? descriptions
           .filter((description) => description.choix === 4)
           .map((description) => <div>{description.content}</div>)
           : ''
       }
         <div>
           {
-          descriptions != null ? descriptions
+          descriptions !== null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
             .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e)=> isCorect(e)}>{description.content}</button>)
             : ''
@@ -65,8 +49,7 @@ function QuestionsContainer({dispatch, ...props}) {
 const mapStateToProps = (state) => ({
   type: state.reducer.type,
   category: state.reducer.category,
-  answer: state.reducer.answer,
+
 });
 
-const Questions = connect(mapStateToProps)(QuestionsContainer);
-export default Questions;
+export default connect(mapStateToProps)(Réponse);
