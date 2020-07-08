@@ -7,7 +7,7 @@ import {
 import BorderTopCard from './BorderTopCard';
 
 function Questions(props) {
-  const [questions, setQuestion] = useState();
+  const [questions, setQuestion] = useState([]);
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
