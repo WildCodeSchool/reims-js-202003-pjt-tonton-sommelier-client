@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import { Link, useHistory,} from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import {
   Input,
   Button,
@@ -9,6 +9,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { changeToken } from '../redux/Reducer';
 import './Login.css';
+import TontonSommelier from '../Images/TontonSommelier.png';
 
 const RegisterContainer = ({ dispatch }) => {
   const [username, setUsername] = useState('');
@@ -65,15 +66,14 @@ const RegisterContainer = ({ dispatch }) => {
 
   return (
     <div className="FormEmployee FormContent">
-      <div className="ImgProfilContent">
-        <img
-          width=""
-          src="https://user-images.githubusercontent.com/57908921/84266976-a777b000-ab25-11ea-8327-29d873625bd1.png"
-          alt="CardImgTP"
-          className="ImgProfilLogin"
-          id="ProfilImg"
-        />
-      </div>
+      <img
+        width=""
+        src={TontonSommelier}
+        alt="CardImgTP"
+        className="ImgProfilLogin"
+        id="ProfilImg"
+      />
+      <h1 className="TitleLoginRegister">Créez vôtre compte Tonton Sommelier !</h1>
       <form onSubmit={submitForm}>
         <div className="form-data DivInput">
           <label htmlFor="username" className="LabelForm">Nom d&apos;utilisateur</label>
@@ -102,7 +102,7 @@ const RegisterContainer = ({ dispatch }) => {
             Continuer
           </Button>
           <Button className="BtnRegister">
-          <Link to="/" className="LinkRegister">
+            <Link to="/" className="LinkRegister">
               J&apos;ai déjà un compte.
             </Link>
           </Button>
