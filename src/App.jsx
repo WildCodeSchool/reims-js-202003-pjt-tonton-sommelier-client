@@ -11,6 +11,8 @@ import Box from './components/Box';
 import Register from './components/Register';
 import Login from './components/Login';
 import Questions from './components/Questions';
+import DebutJeu from './components/DebutJeu';
+import PageScan from './components/PageScan';
 
 export default function App() {
   return (
@@ -20,9 +22,11 @@ export default function App() {
           <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
           <Route path="/boxes/:boxId" component={Box} />
-          <Route path="/descriptions/:descriptionId" component={Description} />
+          <Route path="/descriptions" component={Description} />
           <Route path="/register" component={Register} />
+          <Route path="/debutjeu" component={DebutJeu} />
           <Route path="/login" component={Login} />
+          <Route path="/scan" component={PageScan} />
           <Route path="/" component={Login} />
         </Switch>
       </Router>

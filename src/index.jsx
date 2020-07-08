@@ -6,10 +6,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import tokenReducer from './redux/tokenReducer';
+import Reducer from './redux/Reducer';
 
 const rootReducer = combineReducers({
-  token: tokenReducer,
+  reducer: Reducer,
   // <other reducers here>
 });
 const store = createStore(rootReducer,
