@@ -16,7 +16,7 @@ function NavBottom() {
     <div>
       <div className="NavBottom">
         <div className="CercleBtnNav">
-          <Link className="BtnLink" to="/descriptions/1">
+          <Link className="BtnLink" to="/home">
             <FontAwesomeIcon icon={faHome} className="IconHome" />
           </Link>
         </div>
@@ -31,7 +31,7 @@ function NavBottom() {
           </Link>
         </div>
         <div className="CercleBtnNav">
-          <Link className="BtnLink" to="/login">
+          <Link className="BtnLink" to="/register">
             <img src={profil} alt="Wine" className="BtnImg" />
           </Link>
         </div>
