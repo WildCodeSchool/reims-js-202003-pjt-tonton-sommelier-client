@@ -7,7 +7,7 @@ import {
 import BorderTopCard from './BorderTopCard';
 
 function Questions(props) {
-  const [questions, setQuestion] = useState(null);
+  const [questions, setQuestion] = useState();
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
@@ -26,7 +26,7 @@ function Questions(props) {
       <img className="imageQuestion" src="" alt="" />
       <p>{}</p>
       <div>
-        {questions !== null ? questions.map(question => <p>{question.content}</p>) : ''}
+        {questions.map(question => <p>{question.content}</p>)}
       </div>
       <button className="button1" type="button"> réponse1 </button>
       <button className="button2" type="button"> réponse2 </button>
