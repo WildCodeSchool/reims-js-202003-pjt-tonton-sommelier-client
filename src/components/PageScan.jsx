@@ -7,7 +7,7 @@ import {
 import { connect } from 'react-redux';
 import { changeCategory } from '../redux/Reducer';
 
-import BorderTopCard from './BorderTopCard';
+import BorderTopScan from './BorderTopScan';
 import './PageScan.css';
 
 const PageScan = ({ dispatch }) => {
@@ -29,7 +29,9 @@ const PageScan = ({ dispatch }) => {
 
   return (
     <div>
-      <BorderTopCard />
+      <Link to="/home">
+        <BorderTopScan />
+      </Link>
       <div>
         <p className="TextPageScan">Mettez la caméra en face du QR Code</p>
       </div>
@@ -39,8 +41,6 @@ const PageScan = ({ dispatch }) => {
         onScan={handleScan}
         style={{ width: '100%' }}
       />
-      <span>{result}</span>
-      <Link to="/debutjeu">yoyoyo</Link>
     </div>
   );
 };
