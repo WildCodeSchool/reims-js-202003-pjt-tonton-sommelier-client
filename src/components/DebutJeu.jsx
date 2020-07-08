@@ -37,19 +37,19 @@ function DebutJeuContainer({ dispatch }) {
         </div>
         <div className="oeuilEtNez">
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('oeil'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('oeil'))}>
               <img src={oeil} alt="oeil" className="BtnImg" />
             </Link>
           </div>
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('nez'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('nez'))}>
               <img src={nez} alt="nez" className="BtnImg" />
             </Link>
           </div>
         </div>
         <div className="bouche">
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('bouche'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('bouche'))}>
               <img src={bouche} alt="bouche" className="BtnImg" />
             </Link>
           </div>

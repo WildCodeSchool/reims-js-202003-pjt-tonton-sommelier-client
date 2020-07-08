@@ -26,31 +26,31 @@ function ChoixQuestionContainer({ dispatch }) {
       <div className="contenuBoutons">
         <div className="rougeEtVert">
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('barique'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('barique'))}>
               <img src={barique} alt="barique" className="BtnImg" />
             </Link>
           </div>
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('book'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('book'))}>
               <img src={book} alt="book" className="BtnImg" />
             </Link>
           </div>
         </div>
         <div className="oeuilEtNez">
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('couvert'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('couvert'))}>
               <img src={couvert} alt="couvert" className="BtnImg" />
             </Link>
           </div>
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('france'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('france'))}>
               <img src={france} alt="france" className="BtnImg" />
             </Link>
           </div>
         </div>
         <div className="bouche">
           <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('raisin'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('raisin'))}>
               <img src={raisin} alt="raisin" className="BtnImg" />
             </Link>
           </div>
