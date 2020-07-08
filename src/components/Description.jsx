@@ -13,7 +13,7 @@ const Description = (props) => {
   const [description, setDescription] = useState(null);
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/category/${props.category}/category_content/${props.type}`)
+    Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
       .then((response) => {
         setDescription(response.data);
       });
