@@ -10,6 +10,7 @@ import Description from './components/Description';
 import Box from './components/Box';
 import Register from './components/Register';
 import Login from './components/Login';
+import Questions from './components/Questions';
 import DebutJeu from './components/DebutJeu';
 import PageScan from './components/PageScan';
 import ChoixQuestion from './components/ChoixQuestion'
@@ -19,6 +20,7 @@ export default function App() {
     <div className="AppContent">
       <Router>
         <Switch>
+          <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
           <Route path="/boxes/:boxId" component={Box} />
           <Route path="/descriptions" component={Description} />
