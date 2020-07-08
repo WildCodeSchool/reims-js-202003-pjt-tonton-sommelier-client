@@ -6,16 +6,16 @@ function Questions(props) {
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/category/${props.category}/category-content${props.content}`)
-      .then((response) => {
-        setQuestion(response.data);
+      .then((res) => {
+        setQuestion(res.data);
       });
   }, []);
 
   return (
     <>
-      <img className="" src="" alt="" />
-      <p>{props.question}</p>
-      <button className="button1" type="button"> {question} </button>
+      <img className="imageQuestion" src="" alt="" />
+      <p>{}</p>
+      <button className="button1" type="button"> réponse1 </button>
       <button className="button2" type="button"> réponse2 </button>
       <button className="button3" type="button"> réponse3 </button>
     </>
