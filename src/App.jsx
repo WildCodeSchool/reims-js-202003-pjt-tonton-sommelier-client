@@ -10,12 +10,14 @@ import Description from './components/Description';
 import Box from './components/Box';
 import Register from './components/Register';
 import Login from './components/Login';
+import Questions from './components/Questions';
 
 export default function App() {
   return (
     <div className="AppContent">
       <Router>
         <Switch>
+          <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
           <Route path="/boxes/:boxId" component={Box} />
           <Route path="/descriptions/:descriptionId" component={Description} />
