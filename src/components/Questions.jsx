@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios';
 
-function Questions(props) {
+function Questions({ props }) {
   const [question, setQuestion] = useState(null);
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/category/${props.category}/category-content${props.content}`)
+    Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
       .then((res) => {
         setQuestion(res.data);
       });
