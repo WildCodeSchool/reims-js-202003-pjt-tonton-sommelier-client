@@ -1,40 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import QrReader from 'react-qr-reader';
+import {
+  Link,
+  useHistory,
+} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { changeCategory } from '../redux/Reducer';
+
 import BorderTopCard from './BorderTopCard';
 import './PageScan.css';
 
-class PageScan extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { result: '' };
-  }
+const PageScan = ({ dispatch }) => {
+  const [result, setResult] = useState(null);
+  const history = useHistory();
 
-  handleScan = (data) => {
+  useEffect(() => {
+    dispatch(changeCategory(result));
+  }, [result]);
+
+  const handleScan = (data) => {
     if (data) {
-      this.setState({
-        result: data,
-      });
+      setResult(
+        data,
+      );
+      history.push('/debutjeu');
     }
   };
 
-  render() {
-    const { result } = this.state;
-    return (
+  return (
+    <div>
+      <BorderTopCard />
       <div>
-        <BorderTopCard />
-        <div>
-          <p className="TextPageScan">Mettez la caméra en face du QR Code</p>
-        </div>
-        <QrReader
-          className="BoxScan"
-          delay={300}
-          onScan={this.handleScan}
-          style={{ width: '100%' }}
-        />
-        <span>{result}</span>
+        <p className="TextPageScan">Mettez la caméra en face du QR Code</p>
       </div>
-    );
-  }
-}
+      <QrReader
+        className="BoxScan"
+        delay={300}
+        onScan={handleScan}
+        style={{ width: '100%' }}
+      />
+      <span>{result}</span>
+      <Link to="/debutjeu">yoyoyo</Link>
+    </div>
+  );
+};
 
-export default PageScan;
+export default connect()(PageScan);

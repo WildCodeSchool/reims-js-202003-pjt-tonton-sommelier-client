@@ -5,6 +5,7 @@ import {
 } from 'reactstrap';
 import {
   Link,
+  useHistory,
 } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
@@ -14,6 +15,7 @@ import './Login.css';
 const LoginContainer = ({ dispatch }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const onChangeUsername = (e) => {
     setUsername(
@@ -41,7 +43,7 @@ const LoginContainer = ({ dispatch }) => {
         axios.get('http://localhost:8000/', { headers: { Authorization: `Bearer ${res.token}` } })
           .then((res) => res.data)
           .then((res) => {
-            window.location.replace('http://localhost:3000/home');
+            history.push('/home');
           });
       });
   }

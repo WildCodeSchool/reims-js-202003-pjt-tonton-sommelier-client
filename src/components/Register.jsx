@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory,} from 'react-router-dom';
 import {
   Input,
   Button,
 } from 'reactstrap';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { changeToken } from '../redux/tokenReducer';
+import { changeToken } from '../redux/Reducer';
 import './Login.css';
 
 const RegisterContainer = ({ dispatch }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const onChangeUsername = (e) => {
     setUsername(
@@ -48,7 +49,7 @@ const RegisterContainer = ({ dispatch }) => {
             axios.get('http://localhost:8000/', { headers: { Authorization: `Bearer ${res.token}` } })
               .then((res) => res.data)
               .then((res) => {
-                window.location.replace('http://localhost:3000/home');
+                history.push('/home');
               });
           })
 
