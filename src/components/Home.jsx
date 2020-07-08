@@ -37,7 +37,7 @@ function HomePage() {
             Scannez le QRcode
             Ou entrez le code :
           </h3>
-          <Link className="code" to="/boxes/1">
+          <Link className="code" to="scan">
             <div className="QrCodeReaderImg">
               <img
                 src="https://static.thenounproject.com/png/1433173-200.png"
