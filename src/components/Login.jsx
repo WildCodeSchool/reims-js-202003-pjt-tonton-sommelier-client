@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Input,
   Button,
@@ -11,6 +11,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { changeToken } from '../redux/tokenReducer';
 import './Login.css';
+import TontonSommelier from '../Images/TontonSommelier.png';
 
 const LoginContainer = ({ dispatch }) => {
   const [username, setUsername] = useState('');
@@ -50,15 +51,14 @@ const LoginContainer = ({ dispatch }) => {
 
   return (
     <div className="FormEmployee FormContent">
-      <div className="ImgProfilContent">
-        <img
-          width=""
-          src="https://user-images.githubusercontent.com/57908921/84266976-a777b000-ab25-11ea-8327-29d873625bd1.png"
-          alt="CardImgTP"
-          className="ImgProfilLogin"
-          id="ProfilImg"
-        />
-      </div>
+      <img
+        width=""
+        src={TontonSommelier}
+        alt="CardImgTP"
+        className="ImgProfilLogin"
+        id="ProfilImg"
+      />
+      <h1 className="TitleLoginRegister">Connectez vous à vôtre compte Tonton Sommelier !</h1>
       <form onSubmit={submitForm}>
         <div className="form-data DivInput">
           <label htmlFor="username" className="LabelForm">Nom d'utilisateur</label>

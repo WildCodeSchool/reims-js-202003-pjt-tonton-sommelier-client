@@ -1,5 +1,6 @@
 import React from 'react';
 import './BorderTop.css';
+import arrowwhite from '../Images/arrowwhite.png';
 
 function BorderTopCard() {
   return (
@@ -7,7 +8,7 @@ function BorderTopCard() {
       <div className="BorderTopColor">
         <img
           width=""
-          src="https://user-images.githubusercontent.com/57908921/84250393-48f20800-ab0c-11ea-9827-caf291615adc.png"
+          src={arrowwhite}
           alt="ArrowImgTP"
           className="ArrowImgTP"
         />

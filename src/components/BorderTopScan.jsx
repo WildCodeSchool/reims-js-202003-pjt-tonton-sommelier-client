@@ -1,8 +1,9 @@
 import React from 'react';
 import './BorderTop.css';
+import qrcodewhite from '../Images/qrcodewhite.png';
 import arrowwhite from '../Images/arrowwhite.png';
 
-function BorderTopProfil() {
+function BorderTopScan() {
   return (
     <div className="">
       <div className="BorderTopColor">
@@ -16,14 +17,14 @@ function BorderTopProfil() {
       <div className="ImgCenterBorderTop">
         <img
           width=""
-          src="https://user-images.githubusercontent.com/57908921/84266976-a777b000-ab25-11ea-8327-29d873625bd1.png"
+          src={qrcodewhite}
           alt="CardImgTP"
           className="CardImgTP"
-          id="ProfilImg"
+          id="CardImg"
         />
       </div>
     </div>
   );
 }
 
-export default BorderTopProfil;
+export default BorderTopScan;
