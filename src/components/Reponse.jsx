@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import BorderTopCard from './BorderTopCard';
-import './QuestioRéponse.css';
+import './QuestionReponse.css';
 
 function Réponse(props) {
   const [descriptions, setDescriptions] = useState(null);
@@ -29,23 +29,25 @@ function Réponse(props) {
       </div>
       <div className="questionStyle">
         {props.answer ? <div>Bonne réponse !</div> : <div>Désolé, la réponse était :</div> }
-        <div>
+        <div className="questionImg">
           <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
           <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
           <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
           <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
           <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
         </div>
-        {
-        descriptions !== null ? descriptions
-          .filter((description) => description.choix === 4)
-          .map((description) => <div>{description.content}</div>)
-          : ''
-      }
-        <div>
+        <div className="question">
           {
           descriptions !== null ? descriptions
-            .filter((description) => description.choix >= 1 && description.choix <= 3)R
+            .filter((description) => description.choix === 4)
+            .map((description) => <div>{description.content}</div>)
+            : ''
+          }
+        </div>
+        <div className="questionResponse">
+          {
+          descriptions !== null ? descriptions
+            .filter((description) => description.choix >= 1 && description.choix <= 3)
             .map((description) => <Button className={`button1 ${description.réponse === 1 ? 'bonneReponse' : 'mauvaiseReponse'} ${description.choix === props.answerId ? 'answerChoosen' : ''}`} type="button" value={description.réponse}>{description.content}</Button>)
             : ''
         }

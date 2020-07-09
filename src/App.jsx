@@ -14,7 +14,7 @@ import Questions from './components/Questions';
 import DebutJeu from './components/DebutJeu';
 import PageScan from './components/PageScan';
 import ChoixQuestion from './components/ChoixQuestion';
-import Réponse from './components/Réponse';
+import Reponse from './components/Reponse';
 
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
     <div className="AppContent">
       <Router>
         <Switch>
-          <Route path="/reponse" component={Réponse} />
+          <Route path="/reponse" component={Reponse} />
           <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
           <Route path="/boxes/:boxId" component={Box} />

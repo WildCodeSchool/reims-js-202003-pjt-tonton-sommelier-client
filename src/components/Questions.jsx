@@ -6,9 +6,8 @@ import {
   useHistory,
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
-import './QuestioRéponse.css';
+import './QuestionReponse.css';
 import { changeAnswer, anserIdChoosen } from '../redux/Reducer';
-
 
 
 function QuestionsContainer({dispatch, ...props}) {
@@ -40,26 +39,28 @@ function QuestionsContainer({dispatch, ...props}) {
         </Link>
       </div>
       <div className="questionStyle">
-        <div>
+        <div className="questionImg">
           {
         props.type != null
           ? <img className="imageStyle" src={require(`../Images/${props.type}.png`)} alt="" />
           : ''
-      }
+          }
         </div>
-        {
-        descriptions != null ? descriptions
-          .filter((description) => description.choix === 4)
-          .map((description) => <div>{description.content}</div>)
-          : ''
-      }
-        <div>
+        <div className="question">
+          {
+          descriptions != null ? descriptions
+            .filter((description) => description.choix === 4)
+            .map((description) => <div>{description.content}</div>)
+            : ''
+          }
+        </div>
+        <div className="questionResponse">
           {
           descriptions != null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
             .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e)=> isCorect(e, description.choix)}>{description.content}</button>)
             : ''
-        }
+          }
         </div>
       </div>
 
