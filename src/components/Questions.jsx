@@ -17,7 +17,7 @@ function QuestionsContainer({dispatch, ...props}) {
       .then((response) => {
         setDescriptions(response.data);
       });
-  }, [props.type]);
+  }, [props.type, props.category]);
 
   const isCorect = (e) => {
     if (e.target.value === '1') {

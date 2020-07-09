@@ -16,7 +16,7 @@ const Description = (props) => {
       .then((response) => {
         setDescription(response.data);
       });
-  }, [props.type]);
+  }, [props.type, props.category]);
 
   return (
     <div>
