@@ -13,6 +13,7 @@ import Login from './components/Login';
 import Questions from './components/Questions';
 import DebutJeu from './components/DebutJeu';
 import PageScan from './components/PageScan';
+import ProgressBar from './components/ProgressBar';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/debutjeu" component={DebutJeu} />
           <Route path="/login" component={Login} />
           <Route path="/scan" component={PageScan} />
+          <Route path="/progressbar" component={ProgressBar} />
           <Route path="/" component={Login} />
         </Switch>
       </Router>
