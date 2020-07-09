@@ -1,40 +1,50 @@
-.contenuBoutons {
+.CercleBtnStartGame {
+    border-radius: 50%;
+    width: 10.384215991692628vh;
+    height: 10.384215991692628vh;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00A19A;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.rougeEtVert {
+.CercleBtnStartGameRed {
+    background-color: #a42e49;
+}
+
+.ButtonContent {
+    border-radius: 50%;
+    width: 36.3447559709242vh;
+    height: 36.3447559709242vh;
+    border: 0.726895119418484vh solid #b7b7b7;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.RedGreen {
     display: flex;
-    justify-content: space-around;
-    padding-left: 20vw;
-    padding-right: 20vw;
-    padding-bottom: 3vh;
-
-}
-.boutonVert{
-    height: 5vh;
-    width: 5vh;
-    background-color: green;
-    border-radius: 90px;
-    width: 9.3vh;
-    height: 9.3vh;
+    justify-content: space-between;
+    padding: 0.5vh;
 }
 
-.boutonRouge{
-    height: 5vh;
-    width: 5vh;
-    background-color: red;
-    border-radius: 90px;
-    width: 9.3vh;
-    height: 9.3vh;
-}
-
-.oeuilEtNez {
+.EyeNose {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.bouche {
+.Mouth {
+    display: flex;
+    justify-content: center;
+    margin-top: -4%;
+}
+
+.TontonSodoImg {
+    width: 35%
+}
+
+.TontonSodoContent {
+    width: 100%;
     display: flex;
     justify-content: center;
 }

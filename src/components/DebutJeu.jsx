@@ -14,6 +14,7 @@ import { changeType } from '../redux/Reducer';
 import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
+import TontonSodo from '../Images/TontonSodo.png';
 
 function DebutJeuContainer({ dispatch }) {
   return (
@@ -21,34 +22,36 @@ function DebutJeuContainer({ dispatch }) {
       <Link to="/home">
         <BorderTopCard />
       </Link>
-      <div>ici sera présent le nom de l'équipe</div>
-      <div className="contenuBoutons">
-        <div className="rougeEtVert">
-          <div className="CercleBtn">
-            <Link className="BtnLink" to="/choixquestion">
-              <div className="boutonVert" />
+      <div className="ButtonContent">
+        <div className="RedGreen">
+          <div>
+            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion">
+              <div className="GreenButton" />
             </Link>
           </div>
-          <div className="CercleBtn">
-            <Link className="BtnLink" to="/choixquestion">
-              <div className="boutonRouge" />
+          <div>
+            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion">
+              <div className="RedButton" />
             </Link>
           </div>
         </div>
-        <div className="oeuilEtNez">
-          <div className="CercleBtn">
+        <div className="TontonSodoContent">
+          <img src={TontonSodo} alt="TontonSodo" className="TontonSodoImg" />
+        </div>
+        <div className="EyeNose">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('oeil'))}>
               <img src={oeil} alt="oeil" className="BtnImg" />
             </Link>
           </div>
-          <div className="CercleBtn">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('nez'))}>
               <img src={nez} alt="nez" className="BtnImg" />
             </Link>
           </div>
         </div>
-        <div className="bouche">
-          <div className="CercleBtn">
+        <div className="Mouth">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('bouche'))}>
               <img src={bouche} alt="bouche" className="BtnImg" />
             </Link>
