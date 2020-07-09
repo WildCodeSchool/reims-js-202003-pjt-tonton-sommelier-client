@@ -8,15 +8,15 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './NavBottom.css';
 import wine from '../Images/wine.png';
-import profil from '../Images/profil.png';
 import card from '../Images/card.png';
+import logout from '../Images/logout.png';
 
 function NavBottom() {
   return (
     <div>
       <div className="NavBottom">
         <div className="CercleBtnNav">
-          <Link className="BtnLink" to="/descriptions/1">
+          <Link className="BtnLink" to="/home">
             <FontAwesomeIcon icon={faHome} className="IconHome" />
           </Link>
         </div>
@@ -32,7 +32,7 @@ function NavBottom() {
         </div>
         <div className="CercleBtnNav">
           <Link className="BtnLink" to="/login">
-            <img src={profil} alt="Wine" className="BtnImg" />
+            <img src={logout} alt="Wine" className="BtnImg" />
           </Link>
         </div>
       </div>

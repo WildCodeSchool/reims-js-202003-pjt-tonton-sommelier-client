@@ -8,9 +8,8 @@ import BorderTopCard from './BorderTopCard';
 import './QuestioRéponse.css';
 import { changeAnswer } from '../redux/Reducer';
 
-
-function QuestionsContainer({dispatch, ...props}) {
-  const [descriptions, setDescriptions] = useState(null);
+function Questions(props) {
+  const [questions, setQuestion] = useState([]);
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
@@ -34,6 +33,7 @@ function QuestionsContainer({dispatch, ...props}) {
           <BorderTopCard />
         </Link>
       </div>
+<<<<<<< HEAD
       <div className="questionStyle">
         <div>
           {
@@ -56,6 +56,12 @@ function QuestionsContainer({dispatch, ...props}) {
             : ''
         }
         </div>
+=======
+      <img className="imageQuestion" src="" alt="" />
+      <p>{}</p>
+      <div>
+        {questions.map((question) => <p>{question.content}</p>)}
+>>>>>>> master
       </div>
 
     </>

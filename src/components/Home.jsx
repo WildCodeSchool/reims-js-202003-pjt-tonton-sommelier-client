@@ -18,6 +18,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import BorderTopHome from './BorderTopHome';
 import NavBottom from './NavBottom';
+import TontonSommelierTitle from '../Images/TontonSommelierTitle.png';
 
 function HomePageContainer({ dispatch}) {
   return (
@@ -26,28 +27,23 @@ function HomePageContainer({ dispatch}) {
         <BorderTopHome />
       </Link>
       <div className="HomeContent">
-        <div className="ImgTontonHomeContent">
-          <img
-            width="50%"
-            src="https://user-images.githubusercontent.com/57908921/84481934-2809ee00-ac97-11ea-9261-4eddecc21ba8.png"
-            alt="TontonSommelier"
-            className="ImgTontonHome"
-          />
-        </div>
+        <img
+          src={TontonSommelierTitle}
+          alt="TontonSommelier"
+          className="ImgTontonHome"
+        />
         <h3 className="TittleHome">Quel est vôtre coffret ?</h3>
         <div>
           <h3 className="TittleHome">
             Scannez le QRcode
             Ou entrez le code :
           </h3>
-          <Link className="code" to="scan">
-            <div className="QrCodeReaderImg">
-              <img
-                src="https://static.thenounproject.com/png/1433173-200.png"
-                alt="ArrowImgTP"
-                className="ImgPhoto"
-              />
-            </div>
+          <Link className="code QrCodeReaderImg" to="scan">
+            <img
+              src="https://static.thenounproject.com/png/1433173-200.png"
+              alt="ArrowImgTP"
+              className="ImgPhoto"
+            />
           </Link>
           <div className="InputHomeContent">
             <InputGroup>
