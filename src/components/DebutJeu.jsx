@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Link,
   // useParams,
@@ -14,41 +14,44 @@ import { changeType } from '../redux/Reducer';
 import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
+import TontonSodo from '../Images/TontonSodo.png';
 
 function DebutJeuContainer({ dispatch }) {
-
   return (
     <div>
       <Link to="/home">
         <BorderTopCard />
       </Link>
-      <div className="contenuBoutons">
-        <div className="rougeEtVert">
-          <div className="CercleBtn">
+      <div className="ButtonContent">
+        <div className="RedGreen">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/boxes/1">
-              <div className="boutonVert" />
+              <div className="GreenButton" />
             </Link>
           </div>
-          <div className="CercleBtn">
+          <div className="CercleBtnStartGame CercleBtnStartGameRed">
             <Link className="BtnLink" to="/boxes/1">
-              <div className="boutonRouge" />
+              <div className="RedButton" />
             </Link>
           </div>
         </div>
-        <div className="oeuilEtNez">
-          <div className="CercleBtn">
+        <div className="TontonSodoContent">
+          <img src={TontonSodo} alt="TontonSodo" className="TontonSodoImg" />
+        </div>
+        <div className="EyeNose">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('oeil'))}>
               <img src={oeil} alt="oeil" className="BtnImg" />
             </Link>
           </div>
-          <div className="CercleBtn">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('nez'))}>
               <img src={nez} alt="nez" className="BtnImg" />
             </Link>
           </div>
         </div>
-        <div className="bouche">
-          <div className="CercleBtn">
+        <div className="Mouth">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('bouche'))}>
               <img src={bouche} alt="bouche" className="BtnImg" />
             </Link>
@@ -61,4 +64,3 @@ function DebutJeuContainer({ dispatch }) {
 
 const DebutJeu = connect()(DebutJeuContainer);
 export default DebutJeu;
-
