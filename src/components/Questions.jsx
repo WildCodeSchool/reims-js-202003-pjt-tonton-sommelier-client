@@ -7,7 +7,8 @@ import {
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
 import './QuestioRéponse.css';
-import { changeAnswer } from '../redux/Reducer';
+import { changeAnswer, anserIdChoosen } from '../redux/Reducer';
+
 
 
 function QuestionsContainer({dispatch, ...props}) {
@@ -21,12 +22,13 @@ function QuestionsContainer({dispatch, ...props}) {
       });
   }, [props.type, props.category]);
 
-  const isCorect = (e) => {
+  const isCorect = (e, id) => {
     if (e.target.value === '1') {
       dispatch(changeAnswer(true));
     } else {
       dispatch(changeAnswer(false));
     }
+    dispatch(anserIdChoosen(id));
     history.push('/reponse');
   };
 
@@ -55,7 +57,7 @@ function QuestionsContainer({dispatch, ...props}) {
           {
           descriptions != null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e)=> isCorect(e)}>{description.content}</button>)
+            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e)=> isCorect(e, description.choix)}>{description.content}</button>)
             : ''
         }
         </div>
@@ -69,6 +71,7 @@ const mapStateToProps = (state) => ({
   type: state.reducer.type,
   category: state.reducer.category,
   answer: state.reducer.answer,
+  answerId: state.reducer.answerId,
 });
 
 const Questions = connect(mapStateToProps)(QuestionsContainer);
