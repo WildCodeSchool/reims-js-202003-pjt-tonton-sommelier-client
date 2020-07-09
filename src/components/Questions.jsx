@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { connect } from 'react-redux';
 import {
   Link,
+  useHistory,
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
 import './QuestioRéponse.css';
@@ -11,6 +12,7 @@ import { changeAnswer } from '../redux/Reducer';
 
 function QuestionsContainer({dispatch, ...props}) {
   const [descriptions, setDescriptions] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
@@ -25,6 +27,7 @@ function QuestionsContainer({dispatch, ...props}) {
     } else {
       dispatch(changeAnswer(false));
     }
+    history.push('/reponse');
   };
 
   return (

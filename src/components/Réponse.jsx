@@ -3,19 +3,21 @@ import Axios from 'axios';
 import { connect } from 'react-redux';
 import {
   Link,
+  useHistory,
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
 import './QuestioRéponse.css';
 
-function Réponse (props) {
+function Réponse(props) {
   const [descriptions, setDescriptions] = useState(null);
+  const history = useHistory();
 
   useEffect(() => {
     Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
       .then((response) => {
         setDescriptions(response.data);
       });
-  }, [props.type]);
+  }, [props.type, props.category]);
 
   return (
     <>
@@ -25,7 +27,14 @@ function Réponse (props) {
         </Link>
       </div>
       <div className="questionStyle">
-        <div>Désolé, la réponse était :</div>
+        {props.answer ? <div>Bonne réponse !</div> : <div>Désolé, la réponse était :</div> }
+        <div>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+        </div>
         {
         descriptions !== null ? descriptions
           .filter((description) => description.choix === 4)
@@ -36,11 +45,12 @@ function Réponse (props) {
           {
           descriptions !== null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e)=> isCorect(e)}>{description.content}</button>)
+            .map((description) => <button className={`button1 ${description.réponse === 1 ? 'bonneReponse' : 'mauvaiseReponse'}`} type="button" value={description.réponse}>{description.content}</button>)
             : ''
         }
         </div>
       </div>
+      <button type="button" onClick={() => history.push('/debutjeu')}>next</button>
 
     </>
   );
@@ -49,7 +59,7 @@ function Réponse (props) {
 const mapStateToProps = (state) => ({
   type: state.reducer.type,
   category: state.reducer.category,
-
+  answer: state.reducer.answer,
 });
 
 export default connect(mapStateToProps)(Réponse);

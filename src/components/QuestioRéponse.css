@@ -9,3 +9,13 @@
     height: 20vh;
     width: 20wh;
 }
+
+.bonneReponse {
+    background-color: green;
+    color: white;
+}
+
+.mauvaiseReponse {
+    background-color: red;
+    color: white;
+}
