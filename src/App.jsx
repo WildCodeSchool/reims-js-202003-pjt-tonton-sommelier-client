@@ -13,12 +13,16 @@ import Login from './components/Login';
 import Questions from './components/Questions';
 import DebutJeu from './components/DebutJeu';
 import PageScan from './components/PageScan';
+import ChoixQuestion from './components/ChoixQuestion';
+import Reponse from './components/Reponse';
+
 
 export default function App() {
   return (
     <div className="AppContent">
       <Router>
         <Switch>
+          <Route path="/reponse" component={Reponse} />
           <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
           <Route path="/boxes/:boxId" component={Box} />
@@ -27,6 +31,7 @@ export default function App() {
           <Route path="/debutjeu" component={DebutJeu} />
           <Route path="/login" component={Login} />
           <Route path="/scan" component={PageScan} />
+          <Route path="/choixquestion" component={ChoixQuestion} />
           <Route path="/" component={Login} />
         </Switch>
       </Router>

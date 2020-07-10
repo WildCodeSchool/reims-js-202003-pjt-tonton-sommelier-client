@@ -5,13 +5,12 @@ import {
   Link,
   useHistory,
 } from 'react-router-dom';
+import { Button } from 'reactstrap';
 import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
-import { changeAnswer, anserIdChoosen } from '../redux/Reducer';
 
-
-function QuestionsContainer({dispatch, ...props}) {
-  const [descriptions, setDescriptions] = useState([]);
+function Réponse(props) {
+  const [descriptions, setDescriptions] = useState(null);
   const history = useHistory();
 
   useEffect(() => {
@@ -21,16 +20,6 @@ function QuestionsContainer({dispatch, ...props}) {
       });
   }, [props.type, props.category]);
 
-  const isCorect = (e, id) => {
-    if (e.target.value === '1') {
-      dispatch(changeAnswer(true));
-    } else {
-      dispatch(changeAnswer(false));
-    }
-    dispatch(anserIdChoosen(id));
-    history.push('/reponse');
-  };
-
   return (
     <>
       <div>
@@ -39,16 +28,17 @@ function QuestionsContainer({dispatch, ...props}) {
         </Link>
       </div>
       <div className="questionStyle">
+        {props.answer ? <div>Bonne réponse !</div> : <div>Désolé, la réponse était :</div> }
         <div className="questionImg">
-          {
-        props.type != null
-          ? <img className="imageStyle" src={require(`../Images/${props.type}.png`)} alt="" />
-          : ''
-          }
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
         </div>
         <div className="question">
           {
-          descriptions != null ? descriptions
+          descriptions !== null ? descriptions
             .filter((description) => description.choix === 4)
             .map((description) => <div>{description.content}</div>)
             : ''
@@ -56,13 +46,14 @@ function QuestionsContainer({dispatch, ...props}) {
         </div>
         <div className="questionResponse">
           {
-          descriptions != null ? descriptions
+          descriptions !== null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e)=> isCorect(e, description.choix)}>{description.content}</button>)
+            .map((description) => <Button className={`button1 ${description.réponse === 1 ? 'bonneReponse' : 'mauvaiseReponse'} ${description.choix === props.answerId ? 'answerChoosen' : ''}`} type="button" value={description.réponse}>{description.content}</Button>)
             : ''
-          }
+        }
         </div>
       </div>
+      <button type="button" onClick={() => history.push('/debutjeu')}>next</button>
 
     </>
   );
@@ -75,5 +66,4 @@ const mapStateToProps = (state) => ({
   answerId: state.reducer.answerId,
 });
 
-const Questions = connect(mapStateToProps)(QuestionsContainer);
-export default Questions;
+export default connect(mapStateToProps)(Réponse);

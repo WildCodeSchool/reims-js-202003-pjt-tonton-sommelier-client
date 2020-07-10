@@ -24,13 +24,13 @@ function DebutJeuContainer({ dispatch }) {
       </Link>
       <div className="ButtonContent">
         <div className="RedGreen">
-          <div className="CercleBtnStartGame">
-            <Link className="BtnLink" to="/boxes/1">
+          <div>
+            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion">
               <div className="GreenButton" />
             </Link>
           </div>
-          <div className="CercleBtnStartGame CercleBtnStartGameRed">
-            <Link className="BtnLink" to="/boxes/1">
+          <div>
+            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion">
               <div className="RedButton" />
             </Link>
           </div>
@@ -40,19 +40,19 @@ function DebutJeuContainer({ dispatch }) {
         </div>
         <div className="EyeNose">
           <div className="CercleBtnStartGame">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('oeil'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('oeil'))}>
               <img src={oeil} alt="oeil" className="BtnImg" />
             </Link>
           </div>
           <div className="CercleBtnStartGame">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('nez'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('nez'))}>
               <img src={nez} alt="nez" className="BtnImg" />
             </Link>
           </div>
         </div>
         <div className="Mouth">
           <div className="CercleBtnStartGame">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('bouche'))}>
+            <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('bouche'))}>
               <img src={bouche} alt="bouche" className="BtnImg" />
             </Link>
           </div>
