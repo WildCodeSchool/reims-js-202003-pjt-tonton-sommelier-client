@@ -28,14 +28,10 @@ function Réponse(props) {
         </Link>
       </div>
       <div className="questionStyle">
-        {props.answer ? <div>Bonne réponse !</div> : <div>Désolé, la réponse était :</div> }
-        <div className="questionImg">
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+        <div className="explication">
+          blablablablabl ablablablabla blablablabla blablblblbalbalbalb blablablablabl ablablablabla blablablabla blablblblbalbalbalb blablablablabl ablablablabla blablablabla blablblblbalbalbalb
         </div>
+        {props.answer ? <div>Bonne réponse !</div> : <div>Mauvaise réponse !</div> }
         <div className="question">
           {
           descriptions !== null ? descriptions
@@ -44,16 +40,16 @@ function Réponse(props) {
             : ''
           }
         </div>
-        <div className="questionResponse">
+        <div className="lisetResponse">
           {
           descriptions !== null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <Button className={`button1 ${description.réponse === 1 ? 'bonneReponse' : 'mauvaiseReponse'} ${description.choix === props.answerId ? 'answerChoosen' : ''}`} type="button" value={description.réponse}>{description.content}</Button>)
+            .map((description) => <div className={`réponse ${description.réponse === 1 ? 'bonneReponse' : 'mauvaiseReponse'} ${description.choix === props.answerId ? 'answerChoosen' : ''}`} type="button" value={description.réponse}>{description.content}</div>)
             : ''
         }
         </div>
+        <button type="button" className="buttonNext" onClick={() => history.push('/debutjeu')}>Question Suivante</button>
       </div>
-      <button type="button" onClick={() => history.push('/debutjeu')}>next</button>
 
     </>
   );
