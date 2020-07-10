@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import BorderTopCard from './BorderTopCard';
 import './DebutDeJeu.css';
 import './Box.css';
+import './ChoixQuestion.css';
 
 import { changeType } from '../redux/Reducer';
 
@@ -25,31 +26,34 @@ function ChoixQuestionContainer({ dispatch }) {
       </Link>
       <div className="contenuBoutons">
         <div className="rougeEtVert">
-          <div className="CercleBtn">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('barique'))}>
               <img src={barique} alt="barique" className="BtnImg" />
             </Link>
           </div>
-          <div className="CercleBtn">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('book'))}>
               <img src={book} alt="book" className="BtnImg" />
             </Link>
           </div>
         </div>
+        <div className="plusOneContainer">
+          <div className="plusOneText">+1</div>
+        </div>
         <div className="oeuilEtNez">
-          <div className="CercleBtn">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('couvert'))}>
               <img src={couvert} alt="couvert" className="BtnImg" />
             </Link>
           </div>
-          <div className="CercleBtn">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('france'))}>
               <img src={france} alt="france" className="BtnImg" />
             </Link>
           </div>
         </div>
         <div className="bouche">
-          <div className="CercleBtn">
+          <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('raisin'))}>
               <img src={raisin} alt="raisin" className="BtnImg" />
             </Link>
