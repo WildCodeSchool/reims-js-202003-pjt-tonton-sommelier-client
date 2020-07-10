@@ -41,7 +41,7 @@
     color: white;
     background-color: #00a19a;
     border-radius: 10px;
-    font-size: 1.7em;
+    font-size: 1.4em;
     padding: 1vh;
 
 }
@@ -57,15 +57,12 @@
     color: white !important;
 }
 
-
-
 .mauvaiseReponse {
-    background-color: lightgrey !important;
+    background-color: white !important;
     color: white;
     width: 20vh;
 }  
 .answerChoosen {
-    font-size: 2.1rem !important;
     border: 2px black solid;
 }
 
@@ -98,11 +95,13 @@
     justify-content: space-around;
     align-items: center;
     width: 90vw;
+    height: 8vh;
     border-radius: 10px;
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
-    font-size: 1.5em;
     color: black;
     padding: .5vh;
+    font-size: 1.8rem;
+
 }
 
 .lisetResponse {
@@ -115,11 +114,15 @@
 }
 
 .explication {
+    display: flex;
+    justify-content: center;
     text-align: center;
     flex-direction: column;
     align-items: center;
     border: 2px grey solid;
     border-radius: 10px;
     width: 90vw;
+    height: 20vh;
     background-color: white;
+    font-size: 2rem;
 }

@@ -22,6 +22,9 @@ function DebutJeuContainer({ dispatch }) {
       <Link to="/home">
         <BorderTopCard />
       </Link>
+      <div className="displayNomEquipe">
+        <div className="nomEquipe">Nom de l'équipe</div>
+      </div>
       <div className="ButtonContent">
         <div className="RedGreen">
           <div>

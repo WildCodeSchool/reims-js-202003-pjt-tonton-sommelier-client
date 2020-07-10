@@ -29,9 +29,10 @@ function Réponse(props) {
       </div>
       <div className="questionStyle">
         <div className="explication">
-          blablablablabl ablablablabla blablablabla blablblblbalbalbalb blablablablabl ablablablabla blablablabla blablblblbalbalbalb blablablablabl ablablablabla blablablabla blablblblbalbalbalb
+          {descriptions !== null ? descriptions.filter((description) => description.choix === 5)
+            .map((description) => description.content)
+            : ''}
         </div>
-        {props.answer ? <div>Bonne réponse !</div> : <div>Mauvaise réponse !</div> }
         <div className="question">
           {
           descriptions !== null ? descriptions
