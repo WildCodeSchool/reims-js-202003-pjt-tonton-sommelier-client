@@ -1,0 +1,44 @@
+.plusOneContainer {
+    width: 10.384215991692628vh;
+    height: 10.384215991692628vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #00A19A;
+    color: white;
+    font-size: 2.5rem;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.plusOneText {
+    width: 35%;
+}
+
+.oeuilEtNez {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bouche {
+    display: flex;
+    justify-content: center;
+    margin-top: -4%;
+}
+
+.rougeEtVert {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vh;
+}
+
+.contenuBoutons {
+    border-radius: 50%;
+    width: 36.3447559709242vh;
+    height: 36.3447559709242vh;
+    border: 0.726895119418484vh solid #b7b7b7;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30%;
+}
