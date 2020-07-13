@@ -17,8 +17,6 @@ import './Box.css';
 
 function Box() {
   // const { boxId } = useParams();
-  
-
   return (
     <div>
       <Link className="code" to="/debutjeu">
