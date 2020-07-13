@@ -16,7 +16,7 @@ import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
 import TontonSodo from '../Images/TontonSodo.png';
 
-function DebutJeuContainer({dispatch, ...props}) {
+function DebutJeuContainer({ dispatch, ...props }) {
   return (
     <div>
       <Link to="/home">
