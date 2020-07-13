@@ -16,12 +16,15 @@ import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
 import TontonSodo from '../Images/TontonSodo.png';
 
-function DebutJeuContainer({ dispatch }) {
+function DebutJeuContainer({ dispatch, ...props }) {
   return (
     <div>
       <Link to="/home">
         <BorderTopCard />
       </Link>
+      <div>
+        <h3>{props.NameSession}</h3>
+      </div>
       <div className="ButtonContent">
         <div className="RedGreen">
           <div>
@@ -62,5 +65,13 @@ function DebutJeuContainer({ dispatch }) {
   );
 }
 
-const DebutJeu = connect()(DebutJeuContainer);
+const mapStateToProps = (state) => ({
+  type: state.reducer.type,
+  category: state.reducer.category,
+  answer: state.reducer.answer,
+  answerId: state.reducer.answerId,
+  NameSession: state.reducer.NameSession,
+});
+
+const DebutJeu = connect(mapStateToProps)(DebutJeuContainer);
 export default DebutJeu;

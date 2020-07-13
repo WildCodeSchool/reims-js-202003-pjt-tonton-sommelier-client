@@ -64,6 +64,7 @@ const mapStateToProps = (state) => ({
   category: state.reducer.category,
   answer: state.reducer.answer,
   answerId: state.reducer.answerId,
+  NameSession: state.reducer.NameSession,
 });
 
 export default connect(mapStateToProps)(Réponse);
