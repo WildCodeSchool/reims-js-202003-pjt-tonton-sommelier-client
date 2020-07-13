@@ -24,6 +24,9 @@ function ChoixQuestionContainer({ dispatch }) {
       <Link to="/debutjeu">
         <BorderTopCard />
       </Link>
+      <div className="displayNomEquipe">
+        <div className="nomEquipe">Nom de l'équipe</div>
+      </div>
       <div className="contenuBoutons">
         <div className="rougeEtVert">
           <div className="CercleBtnStartGame">
