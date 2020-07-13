@@ -121,8 +121,10 @@
     align-items: center;
     border: 2px grey solid;
     border-radius: 10px;
+
+
     width: 90vw;
     height: 20vh;
     background-color: white;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
