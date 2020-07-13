@@ -33,7 +33,7 @@ function DebutJeuContainer({ dispatch, ...props }) {
             </Link>
           </div>
           <div>
-            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion2">
+            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1">
               <div className="RedButton" />
             </Link>
           </div>
