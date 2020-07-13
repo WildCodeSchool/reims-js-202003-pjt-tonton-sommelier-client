@@ -48,7 +48,7 @@ function HomePageContainer({ dispatch}) {
           <div className="InputHomeContent">
             <InputGroup>
               <Input placeholder="Entrez vôtre code" />
-              <Link className="code" to="/debutjeu" onClick={() => dispatch(changeCategory('1'))}>
+              <Link className="code" to="/sessionname" onClick={() => dispatch(changeCategory('1'))}>
                 <InputGroupAddon addonType="append"><Button color="secondary"><FontAwesomeIcon icon={faCheck} id="IconCheck" /></Button></InputGroupAddon>
               </Link>
             </InputGroup>

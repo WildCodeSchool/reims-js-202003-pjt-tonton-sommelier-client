@@ -23,7 +23,7 @@ const PageScan = ({ dispatch }) => {
       setResult(
         data,
       );
-      history.push('/debutjeu');
+      history.push('/sessionname');
     }
   };
 

@@ -18,14 +18,20 @@ const changeAnswer = (newAnswer) => ({
   type: 'CHANGE_ANSWER',
   newAnswer,
 });
+
 const anserIdChoosen = (newAnswerId) => ({
   type: 'ANSWER_ID_CHOOSEN',
   newAnswerId,
 });
 
+const NameSession = (newNameSession) => ({
+  type: 'NAME_SESSION',
+  newNameSession,
+});
+
 /* ------------------- Reducer -----------------------*/
 const typeReducer = (state = {
-  type: null, token: null, category: null, answer: null, answerId: null,
+  type: null, token: null, category: null, answer: null, answerId: null, NameSession: null,
 }, action) => {
   switch (action.type) {
     case 'CHANGE_CATEGORY':
@@ -53,6 +59,11 @@ const typeReducer = (state = {
         ...state,
         answerId: action.newAnswerId,
       };
+    case 'NAME_SESSION':
+      return {
+        ...state,
+        NameSession: action.newNameSession,
+      };
 
       // other cases
     default:
@@ -62,5 +73,5 @@ const typeReducer = (state = {
 
 export default typeReducer;
 export {
-  changeType, changeToken, changeCategory, changeAnswer, anserIdChoosen,
+  changeType, changeToken, changeCategory, changeAnswer, anserIdChoosen, NameSession,
 };

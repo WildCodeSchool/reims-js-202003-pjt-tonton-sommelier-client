@@ -15,7 +15,7 @@ import DebutJeu from './components/DebutJeu';
 import PageScan from './components/PageScan';
 import ChoixQuestion from './components/ChoixQuestion';
 import Reponse from './components/Reponse';
-
+import SessionNamePage from './components/SessionName';
 
 export default function App() {
   return (
@@ -29,6 +29,7 @@ export default function App() {
           <Route path="/descriptions" component={Description} />
           <Route path="/register" component={Register} />
           <Route path="/debutjeu" component={DebutJeu} />
+          <Route path="/sessionname" component={SessionNamePage} />
           <Route path="/login" component={Login} />
           <Route path="/scan" component={PageScan} />
           <Route path="/choixquestion" component={ChoixQuestion} />
