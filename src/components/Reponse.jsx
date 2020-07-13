@@ -14,11 +14,16 @@ function Réponse(props) {
   const history = useHistory();
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
-      .then((response) => {
-        setDescriptions(response.data);
-      });
-  }, [props.type, props.category]);
+    if (props.token == null) {
+      history.push('/login');
+    } else {
+      Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
+        .then((response) => {
+          setDescriptions(response.data);
+        });
+    }
+  }, [props.type, props.category, props.token, history]);
+
 
   return (
     <>
@@ -62,6 +67,7 @@ const mapStateToProps = (state) => ({
   answer: state.reducer.answer,
   answerId: state.reducer.answerId,
   NameSession: state.reducer.NameSession,
+  token: state.reducer.token,
 });
 
 export default connect(mapStateToProps)(Réponse);
