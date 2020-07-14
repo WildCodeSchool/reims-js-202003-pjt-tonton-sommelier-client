@@ -14,11 +14,16 @@ function Réponse(props) {
   const history = useHistory();
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
-      .then((response) => {
-        setDescriptions(response.data);
-      });
-  }, [props.type, props.category]);
+    if (props.token == null) {
+      history.push('/login');
+    } else {
+      Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
+        .then((response) => {
+          setDescriptions(response.data);
+        });
+    }
+  }, [props.type, props.category, props.token, history]);
+
 
   return (
     <>
@@ -28,13 +33,10 @@ function Réponse(props) {
         </Link>
       </div>
       <div className="questionStyle">
-        {props.answer ? <div>Bonne réponse !</div> : <div>Désolé, la réponse était :</div> }
-        <div className="questionImg">
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
-          <p>blablablablablablablablablablablablablablablblblbalbalbalb</p>
+        <div className="explication">
+          {descriptions !== null ? descriptions.filter((description) => description.choix === 5)
+            .map((description) => description.content)
+            : ''}
         </div>
         <div className="question">
           {
@@ -44,16 +46,16 @@ function Réponse(props) {
             : ''
           }
         </div>
-        <div className="questionResponse">
+        <div className="lisetResponse">
           {
           descriptions !== null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <Button className={`button1 ${description.réponse === 1 ? 'bonneReponse' : 'mauvaiseReponse'} ${description.choix === props.answerId ? 'answerChoosen' : ''}`} type="button" value={description.réponse}>{description.content}</Button>)
+            .map((description) => <div className={`réponse ${description.réponse === 1 ? 'bonneReponse' : 'mauvaiseReponse'} ${description.choix === props.answerId ? 'answerChoosen' : ''}`} type="button" value={description.réponse}>{description.content}</div>)
             : ''
         }
         </div>
+        <button type="button" className="buttonNext" onClick={() => history.push('/debutjeu')}>Question Suivante</button>
       </div>
-      <button type="button" onClick={() => history.push('/debutjeu')}>next</button>
 
     </>
   );
@@ -65,6 +67,7 @@ const mapStateToProps = (state) => ({
   answer: state.reducer.answer,
   answerId: state.reducer.answerId,
   NameSession: state.reducer.NameSession,
+  token: state.reducer.token,
 });
 
 export default connect(mapStateToProps)(Réponse);

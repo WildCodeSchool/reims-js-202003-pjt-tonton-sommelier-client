@@ -24,6 +24,9 @@ function ChoixQuestionContainer({ dispatch }) {
       <Link to="/debutjeu">
         <BorderTopCard />
       </Link>
+      <div className="displayNomEquipe">
+        <div className="nomEquipe">Nom de l'équipe</div>
+      </div>
       <div className="contenuBoutons">
         <div className="rougeEtVert">
           <div className="CercleBtnStartGame">
@@ -64,5 +67,5 @@ function ChoixQuestionContainer({ dispatch }) {
   );
 }
 
-const ChoixQuestion = connect()(ChoixQuestionContainer);
-export default ChoixQuestion;
+const ChoixQuestion1 = connect()(ChoixQuestionContainer);
+export default ChoixQuestion1;

@@ -9,17 +9,20 @@ import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
 import { changeAnswer, anserIdChoosen } from '../redux/Reducer';
 
-
-function QuestionsContainer({dispatch, ...props}) {
+function QuestionsContainer({ dispatch, ...props }) {
   const [descriptions, setDescriptions] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
-    Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`)
-      .then((response) => {
-        setDescriptions(response.data);
-      });
-  }, [props.type, props.category]);
+    if (props.token == null) {
+      history.push('/login');
+    } else {
+      Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
+        .then((response) => {
+          setDescriptions(response.data);
+        });
+    }
+  }, [props.type, props.category, props.token, history]);
 
   const isCorect = (e, id) => {
     if (e.target.value === '1') {
@@ -58,7 +61,7 @@ function QuestionsContainer({dispatch, ...props}) {
           {
           descriptions != null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e)=> isCorect(e, description.choix)}>{description.content}</button>)
+            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e) => isCorect(e, description.choix)}>{description.content}</button>)
             : ''
           }
         </div>
@@ -73,6 +76,7 @@ const mapStateToProps = (state) => ({
   category: state.reducer.category,
   answer: state.reducer.answer,
   answerId: state.reducer.answerId,
+  token: state.reducer.token,
 });
 
 const Questions = connect(mapStateToProps)(QuestionsContainer);
