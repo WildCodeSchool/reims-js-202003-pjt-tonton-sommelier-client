@@ -19,7 +19,7 @@ import TontonSodo from '../Images/TontonSodo.png';
 function DebutJeuContainer({ dispatch, ...props }) {
   return (
     <div>
-      <Link to="/home">
+      <Link to="/sessionname">
         <BorderTopCard />
       </Link>
       <div>
