@@ -60,7 +60,7 @@ function QuestionsContainer({ dispatch, ...props }) {
           {
           descriptions != null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e) => isCorect(e, description.choix)}>{description.content}</button>)
+            .map((description) => <button className="button1 réponse" type="button" value={description.réponse} onClick={(e) => isCorect(e, description.choix)}>{description.content}</button>)
             : ''
           }
         </div>

@@ -59,17 +59,19 @@
 
 .mauvaiseReponse {
     background-color: white !important;
-    color: white;
     width: 20vh;
 }  
-.answerChoosen {
-    border: 2px black solid;
+.answerChoosenFalse {
+ background-color: red !important;
+ color: white;
 }
+
 
 .questionResponse {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     width: 60vw;
    
 }
@@ -90,9 +92,8 @@
 
 .réponse {
     display: flex;
-    flex-direction: column;
     text-align: center;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 90vw;
     height: 8vh;
@@ -121,10 +122,10 @@
     align-items: center;
     border: 2px grey solid;
     border-radius: 10px;
-
-
     width: 90vw;
     height: 20vh;
     background-color: white;
     font-size: 1.6rem;
 }
+
+

@@ -6,8 +6,10 @@ import {
   useHistory,
 } from 'react-router-dom';
 import { Button } from 'reactstrap';
-import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import BorderTopCard from './BorderTopCard';
 
 function Réponse(props) {
   const [descriptions, setDescriptions] = useState(null);
@@ -23,7 +25,6 @@ function Réponse(props) {
         });
     }
   }, [props.type, props.category, props.token, history]);
-
 
   return (
     <>
@@ -50,7 +51,15 @@ function Réponse(props) {
           {
           descriptions !== null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <div className={`réponse ${description.réponse === 1 ? 'bonneReponse' : 'mauvaiseReponse'} ${description.choix === props.answerId ? 'answerChoosen' : ''}`} type="button" value={description.réponse}>{description.content}</div>)
+            .map((description) => (
+              <div
+                className={`réponse ${description.réponse === 1 ? 'bonneReponse' : ''} ${description.choix === props.answerId && description.réponse !== 1 ? 'answerChoosenFalse' : ''}`} type="button" value={description.réponse}>
+                {description.content}
+                <div className="iconeCheck">
+                  {description.réponse === 1 ? <FontAwesomeIcon  icon={faCheck} /> : (description.choix === props.answerId && description.réponse !== 1 ? <FontAwesomeIcon icon={faTimes} /> : '')}
+                </div>
+              </div>
+            ))
             : ''
         }
         </div>
