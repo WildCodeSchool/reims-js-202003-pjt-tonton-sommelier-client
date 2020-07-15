@@ -70,11 +70,16 @@ input{
 .HomeBottom {
     background-color: #00A19A;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0.5rem;
 }
 
 .ImgWine {
-    width: 15%;
+    width: 65%;
+}
+
+.HomeBottomLink {
+    color: #FFF;
 }
 
 @media screen and (min-width: 768px) {

@@ -19,13 +19,13 @@ import {
 import BorderTopHome from './BorderTopHome';
 import TontonSommelierTitle from '../Images/TontonSommelierTitle.png';
 import wine from '../Images/wine.png';
+import home from '../Images/home.png';
+import logout from '../Images/logout.png';
 
 function HomePageContainer({ dispatch }) {
   return (
     <>
-      <Link to="/" className="LinkRegister">
-        <BorderTopHome />
-      </Link>
+      <BorderTopHome />
       <div className="HomeContent">
         <img
           src={TontonSommelierTitle}
@@ -56,11 +56,26 @@ function HomePageContainer({ dispatch }) {
         </div>
       </div>
       <div className="HomeBottom">
-        <img
-          src={wine}
-          alt="wine"
-          className="ImgWine"
-        />
+        <div>
+          <Link to="/home" className="HomeBottomLink">
+            <img
+              src={home}
+              alt="home"
+              className=""
+            />
+            &nbsp;Accueil
+          </Link>
+        </div>
+        <div>
+          <Link to="/login" className="HomeBottomLink">
+            Déconnexion&nbsp;
+            <img
+              src={logout}
+              alt="logout"
+              className=""
+            />
+          </Link>
+        </div>
       </div>
     </>
   );
