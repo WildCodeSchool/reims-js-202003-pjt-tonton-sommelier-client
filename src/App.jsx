@@ -23,7 +23,7 @@ export default function App() {
     <div className="AppContent">
       <Router>
         <Switch>
-          <Route path="/eyes" component={Eyes} />
+          <Route path="/vue" component={Eyes} />
           <Route path="/reponse" component={Reponse} />
           <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
