@@ -18,7 +18,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import BorderTopHome from './BorderTopHome';
 import TontonSommelierTitle from '../Images/TontonSommelierTitle.png';
-import wine from '../Images/wine.png';
+import QRHome from '../Images/QRHome.png';
 import home from '../Images/home.png';
 import logout from '../Images/logout.png';
 
@@ -40,9 +40,9 @@ function HomePageContainer({ dispatch }) {
           </h3>
           <Link className="code QrCodeReaderImg" to="scan">
             <img
-              src="https://static.thenounproject.com/png/1433173-200.png"
+              src={QRHome}
               alt="ArrowImgTP"
-              className="ImgPhoto"
+              className="ImgQr"
             />
           </Link>
           <div className="InputHomeContent">
@@ -61,7 +61,6 @@ function HomePageContainer({ dispatch }) {
             <img
               src={home}
               alt="home"
-              className=""
             />
             &nbsp;Accueil
           </Link>
@@ -72,7 +71,6 @@ function HomePageContainer({ dispatch }) {
             <img
               src={logout}
               alt="logout"
-              className=""
             />
           </Link>
         </div>
