@@ -18,14 +18,22 @@ import couvert from '../Images/couvert.png';
 import france from '../Images/france.png';
 import raisin from '../Images/raisin.png';
 
-function ChoixQuestionContainer({ dispatch }) {
+function ChoixQuestionContainer({ dispatch, ...props }) {
   return (
     <div>
       <Link to="/debutjeu">
         <BorderTopCard />
       </Link>
-      <div className="displayNomEquipe">
-        <div className="nomEquipe">Nom de l'équipe</div>
+      <div>
+        <p className="NameSessionInGame">
+          <p className="TontonVS">
+            Tonton Sommelier
+            <br />
+          </p>
+          VS
+          <br />
+            {props.NameSession}
+        </p>
       </div>
       <div className="contenuBoutons">
         <div className="rougeEtVert">
@@ -67,5 +75,9 @@ function ChoixQuestionContainer({ dispatch }) {
   );
 }
 
-const ChoixQuestion1 = connect()(ChoixQuestionContainer);
+const mapStateToProps = (state) => ({
+  NameSession: state.reducer.NameSession,
+});
+
+const ChoixQuestion1 = connect(mapStateToProps)(ChoixQuestionContainer);
 export default ChoixQuestion1;
