@@ -28,7 +28,7 @@ function DebutJeuContainer({ dispatch, ...props }) {
             Tonton Sommelier
             <br />
           </p>
-          VS
+          vs
           <br />
             {props.NameSession}
         </p>
