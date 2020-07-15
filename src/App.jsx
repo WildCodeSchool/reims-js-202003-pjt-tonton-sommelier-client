@@ -20,6 +20,7 @@ export default function App() {
     <div className="AppContent">
       <Router>
         <Switch>
+          <Route path="/progress" component={ProgressBar} />
           <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
           <Route path="/boxes/:boxId" component={Box} />
