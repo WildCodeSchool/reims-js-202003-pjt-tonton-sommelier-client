@@ -1,3 +1,4 @@
+import { connect } from 'react-redux';
 import React from 'react';
 import {
   Link,
@@ -10,8 +11,10 @@ import './NavBottom.css';
 import wine from '../Images/wine.png';
 import card from '../Images/card.png';
 import logout from '../Images/logout.png';
+import { changeToken } from '../redux/Reducer';
 
-function NavBottom() {
+function NavBottomContainer({ dispatch }) {
+
   return (
     <div>
       <div className="NavBottom">
@@ -31,7 +34,7 @@ function NavBottom() {
           </Link>
         </div>
         <div className="CercleBtnNav">
-          <Link className="BtnLink" to="/login">
+          <Link className="BtnLink" to="/login" onClick={() => dispatch(changeToken(null))}>
             <img src={logout} alt="Wine" className="BtnImg" />
           </Link>
         </div>
@@ -40,4 +43,5 @@ function NavBottom() {
   );
 }
 
-export default NavBottom;
+const HomePage = connect()(NavBottomContainer);
+export default HomePage;

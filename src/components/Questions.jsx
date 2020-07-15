@@ -18,9 +18,8 @@ function QuestionsContainer({ dispatch, ...props }) {
       history.push('/login');
     } else {
       Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
-        .then((response) => {
-          setDescriptions(response.data);
-        });
+        .then((response) => { setDescriptions(response.data); })
+        .catch(() => { history.push('/login'); });
     }
   }, [props.type, props.category, props.token, history]);
 
