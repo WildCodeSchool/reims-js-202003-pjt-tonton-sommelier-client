@@ -45,7 +45,7 @@ function QuestionsContainer({ dispatch, ...props }) {
         <div className="questionImg">
           {
         props.type != null
-          ? <img className="imageStyle" src={require(`../Images/${props.type}.png`)} alt="" />
+          ? <img className="imageStyle" src={require(`../Images/${props.type}picture.png`)} alt="" />
           : ''
           }
         </div>
