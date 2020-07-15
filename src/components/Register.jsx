@@ -59,8 +59,9 @@ const RegisterContainer = ({ dispatch }) => {
           });
       })
 
-      .catch(() => {
-        alert(`Erreur lors de l'ajout d'un compte : ${e.message}`);
+      .catch((error) => {
+        alert(error.response.data.message);
+        console.log(error.response.data.message);
       });
   }
 

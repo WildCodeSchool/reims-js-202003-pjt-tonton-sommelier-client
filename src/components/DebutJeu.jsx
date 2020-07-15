@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Link,
   // useParams,
@@ -14,42 +14,48 @@ import { changeType } from '../redux/Reducer';
 import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
+import TontonSodo from '../Images/TontonSodo.png';
 
-function DebutJeuContainer({ dispatch }) {
-
+function DebutJeuContainer({ dispatch, ...props }) {
   return (
     <div>
-      <Link to="/home">
+      <Link to="/sessionname">
         <BorderTopCard />
       </Link>
-      <div className="contenuBoutons">
-        <div className="rougeEtVert">
-          <div className="CercleBtn">
-            <Link className="BtnLink" to="/boxes/1">
-              <div className="boutonVert" />
+      <div>
+        <h3>{props.NameSession}</h3>
+      </div>
+      <div className="ButtonContent">
+        <div className="RedGreen">
+          <div>
+            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1">
+              <div className="GreenButton" />
             </Link>
           </div>
-          <div className="CercleBtn">
-            <Link className="BtnLink" to="/boxes/1">
-              <div className="boutonRouge" />
+          <div>
+            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1">
+              <div className="RedButton" />
             </Link>
           </div>
         </div>
-        <div className="oeuilEtNez">
-          <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('oeil'))}>
+        <div className="TontonSodoContent">
+          <img src={TontonSodo} alt="TontonSodo" className="TontonSodoImg" />
+        </div>
+        <div className="EyeNose">
+          <div className="CercleBtnStartGame">
+            <Link className="BtnLink" to="/vue" onClick={() => dispatch(changeType('oeil'))}>
               <img src={oeil} alt="oeil" className="BtnImg" />
             </Link>
           </div>
-          <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('nez'))}>
+          <div className="CercleBtnStartGame">
+            <Link className="BtnLink" to="/nez" onClick={() => dispatch(changeType('nez'))}>
               <img src={nez} alt="nez" className="BtnImg" />
             </Link>
           </div>
         </div>
-        <div className="bouche">
-          <div className="CercleBtn">
-            <Link className="BtnLink" to="/descriptions" onClick={() => dispatch(changeType('bouche'))}>
+        <div className="Mouth">
+          <div className="CercleBtnStartGame">
+            <Link className="BtnLink" to="/bouche" onClick={() => dispatch(changeType('bouche'))}>
               <img src={bouche} alt="bouche" className="BtnImg" />
             </Link>
           </div>
@@ -59,6 +65,13 @@ function DebutJeuContainer({ dispatch }) {
   );
 }
 
-const DebutJeu = connect()(DebutJeuContainer);
-export default DebutJeu;
+const mapStateToProps = (state) => ({
+  type: state.reducer.type,
+  category: state.reducer.category,
+  answer: state.reducer.answer,
+  answerId: state.reducer.answerId,
+  NameSession: state.reducer.NameSession,
+});
 
+const DebutJeu = connect(mapStateToProps)(DebutJeuContainer);
+export default DebutJeu;

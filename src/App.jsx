@@ -13,23 +13,32 @@ import Login from './components/Login';
 import Questions from './components/Questions';
 import DebutJeu from './components/DebutJeu';
 import PageScan from './components/PageScan';
-import ProgressBar from './components/ProgressBar';
+import ChoixQuestion1 from './components/ChoixQuestion1';
+import Reponse from './components/Reponse';
+import SessionNamePage from './components/SessionName';
+import Eyes from './components/Eyes';
+import Nose from './components/Nose';
+import Mouth from './components/Mouth';
 
 export default function App() {
   return (
     <div className="AppContent">
       <Router>
         <Switch>
-          <Route path="/progress" component={ProgressBar} />
+          <Route path="/bouche" component={Mouth} />
+          <Route path="/nez" component={Nose} />
+          <Route path="/vue" component={Eyes} />
+          <Route path="/reponse" component={Reponse} />
           <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
           <Route path="/boxes/:boxId" component={Box} />
           <Route path="/descriptions" component={Description} />
           <Route path="/register" component={Register} />
           <Route path="/debutjeu" component={DebutJeu} />
+          <Route path="/sessionname" component={SessionNamePage} />
           <Route path="/login" component={Login} />
           <Route path="/scan" component={PageScan} />
-          <Route path="/progressbar" component={ProgressBar} />
+          <Route path="/choixquestion1" component={ChoixQuestion1} />
           <Route path="/" component={Login} />
         </Switch>
       </Router>

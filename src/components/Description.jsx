@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import {
   Link,
-  useParams,
 } from 'react-router-dom';
 
 import Axios from 'axios';
@@ -17,22 +16,23 @@ const Description = (props) => {
       .then((response) => {
         setDescription(response.data);
       });
-  }, [props.type]);
+  }, [props.type, props.category]);
 
   return (
     <div>
-      <Link to="/boxes/1">
+      <Link to="/debutjeu">
         <BorderTopCard />
       </Link>
       <h1>
         hello from
       </h1>
-      <div>{
-        description !== null ? description.map(description => <p>{description.content}</p>) : ''
+      <div>
+        {
+        description !== null ? description.map((description) => <p>{description.content}</p>) : ''
       }
       </div>
-      <div></div>
-      <div></div>
+      <div />
+      <div />
     </div>
   );
 };

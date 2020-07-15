@@ -1,0 +1,29 @@
+.SessionNameContent {
+    flex: 1;
+    background-color: #00A19A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -30%;
+}
+
+.SessionNameTitle {
+    text-align: center;
+    padding: 2vh;
+}
+
+.BtnSessionName {
+    background-color: #242424 !important;
+    font-size: 1.3rem !important;
+    margin-top: 2vh;
+    padding-left: 4vh !important;
+    padding-right: 4vh !important;
+    border-radius: .40rem !important;
+    border-color: #242424 !important;
+}
+
+.SessionNameArrow {
+    background-color: #00A19A;
+    z-index: 2;
+}

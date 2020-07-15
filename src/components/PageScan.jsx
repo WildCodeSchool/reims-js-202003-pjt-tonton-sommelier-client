@@ -16,14 +16,14 @@ const PageScan = ({ dispatch }) => {
 
   useEffect(() => {
     dispatch(changeCategory(result));
-  }, [result]);
+  }, [dispatch, result]);
 
   const handleScan = (data) => {
     if (data) {
       setResult(
         data,
       );
-      history.push('/debutjeu');
+      history.push('/sessionname');
     }
   };
 
