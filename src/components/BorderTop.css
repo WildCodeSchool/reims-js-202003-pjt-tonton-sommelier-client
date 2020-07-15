@@ -1,5 +1,6 @@
 .BorderTopColor{
     background-color: #00A19A;
+    padding: 0.5rem;
 }
 
 .ArrowImgTP{
@@ -22,19 +23,8 @@
     width: 20%;
 }
 
-#PaddingHome{
+.BorderTopColorHome {
     padding: 3vh;
-}
-
-.BorderTopColorLogout {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 1vh; 
-}
-
-.LogoutImg {
-    width: 13%;
-    padding: 1vh;
 }
 
 @media screen and (min-width: 768px) {
