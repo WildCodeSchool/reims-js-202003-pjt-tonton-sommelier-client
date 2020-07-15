@@ -16,12 +16,14 @@ import PageScan from './components/PageScan';
 import ChoixQuestion1 from './components/ChoixQuestion1';
 import Reponse from './components/Reponse';
 import SessionNamePage from './components/SessionName';
+import Eyes from './components/Eyes';
 
 export default function App() {
   return (
     <div className="AppContent">
       <Router>
         <Switch>
+          <Route path="/vue" component={Eyes} />
           <Route path="/reponse" component={Reponse} />
           <Route path="/questions" component={Questions} />
           <Route path="/home" component={HomePage} />
