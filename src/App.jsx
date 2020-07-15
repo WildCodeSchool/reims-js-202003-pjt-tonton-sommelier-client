@@ -17,12 +17,14 @@ import ChoixQuestion1 from './components/ChoixQuestion1';
 import Reponse from './components/Reponse';
 import SessionNamePage from './components/SessionName';
 import Eyes from './components/Eyes';
+import Nose from './components/Nose';
 
 export default function App() {
   return (
     <div className="AppContent">
       <Router>
         <Switch>
+          <Route path="/nez" component={Nose} />
           <Route path="/vue" component={Eyes} />
           <Route path="/reponse" component={Reponse} />
           <Route path="/questions" component={Questions} />
