@@ -18,12 +18,14 @@ import Reponse from './components/Reponse';
 import SessionNamePage from './components/SessionName';
 import Eyes from './components/Eyes';
 import Nose from './components/Nose';
+import Mouth from './components/Mouth';
 
 export default function App() {
   return (
     <div className="AppContent">
       <Router>
         <Switch>
+          <Route path="/bouche" component={Mouth} />
           <Route path="/nez" component={Nose} />
           <Route path="/vue" component={Eyes} />
           <Route path="/reponse" component={Reponse} />
