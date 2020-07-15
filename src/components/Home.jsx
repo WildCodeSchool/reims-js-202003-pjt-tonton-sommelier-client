@@ -17,12 +17,12 @@ import {
   faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import BorderTopHome from './BorderTopHome';
-import NavBottom from './NavBottom';
 import TontonSommelierTitle from '../Images/TontonSommelierTitle.png';
+import wine from '../Images/wine.png';
 
-function HomePageContainer({ dispatch}) {
+function HomePageContainer({ dispatch }) {
   return (
-    <div className="AppContent">
+    <>
       <Link to="/" className="LinkRegister">
         <BorderTopHome />
       </Link>
@@ -55,8 +55,14 @@ function HomePageContainer({ dispatch}) {
           </div>
         </div>
       </div>
-      <NavBottom />
-    </div>
+      <div className="HomeBottom">
+        <img
+          src={wine}
+          alt="wine"
+          className="ImgWine"
+        />
+      </div>
+    </>
   );
 }
 

@@ -1,10 +1,18 @@
 import React from 'react';
+import logout from '../Images/logout.png';
 import './BorderTop.css';
 
 function BorderTopHome() {
   return (
     <div className="BorderTopHome">
-      <div className="BorderTopColor" id="PaddingHome" />
+      <div className="BorderTopColor BorderTopColorLogout">
+        <img
+          width=""
+          src={logout}
+          alt="logoutimg"
+          className="LogoutImg"
+        />
+      </div>
       <div className="ImgCenterBorderTop">
         <img
           width=""
