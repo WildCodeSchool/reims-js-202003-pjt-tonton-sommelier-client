@@ -15,6 +15,7 @@ import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
 import TontonSodo from '../Images/TontonSodo.png';
+import ProgressBar from './ProgressBar';
 
 function DebutJeuContainer({ dispatch, ...props }) {
   return (
@@ -59,6 +60,9 @@ function DebutJeuContainer({ dispatch, ...props }) {
               <img src={bouche} alt="bouche" className="BtnImg" />
             </Link>
           </div>
+        </div>
+        <div>
+          <ProgressBar />
         </div>
       </div>
     </div>

@@ -18,6 +18,7 @@ import book from '../Images/book.png';
 import couvert from '../Images/couvert.png';
 import france from '../Images/france.png';
 import raisin from '../Images/raisin.png';
+import ProgressBar from './ProgressBar';
 
 function ChoixQuestionContainer({ dispatch, ...props }) {
   const history = useHistory();
@@ -75,6 +76,9 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
               <img src={raisin} alt="raisin" className="BtnImg" />
             </Link>
           </div>
+        </div>
+        <div>
+          <ProgressBar />
         </div>
       </div>
     </div>

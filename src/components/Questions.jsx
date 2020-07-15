@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
-import { changeAnswer, anserIdChoosen } from '../redux/Reducer';
+import { changeAnswer, anserIdChoosen, counterScore} from '../redux/Reducer';
 
 function QuestionsContainer({ dispatch, ...props }) {
   const [descriptions, setDescriptions] = useState([]);
@@ -24,8 +24,10 @@ function QuestionsContainer({ dispatch, ...props }) {
   }, [props.type, props.category, props.token, history]);
 
   const isCorect = (e, id) => {
+    
     if (e.target.value === '1') {
       dispatch(changeAnswer(true));
+      dispatch(counterScore(props.score));
     } else {
       dispatch(changeAnswer(false));
     }
@@ -76,6 +78,7 @@ const mapStateToProps = (state) => ({
   answer: state.reducer.answer,
   answerId: state.reducer.answerId,
   token: state.reducer.token,
+  score: state.reducer.score,
 });
 
 const Questions = connect(mapStateToProps)(QuestionsContainer);

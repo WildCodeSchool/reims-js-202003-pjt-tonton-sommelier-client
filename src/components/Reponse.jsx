@@ -63,7 +63,7 @@ function Réponse(props) {
             : ''
         }
         </div>
-        <button type="button" className="buttonNext" onClick={() => history.push('/debutjeu')}>Question Suivante</button>
+        <Button type="button" className="buttonNext" onClick={() => history.push('/debutjeu')}>Question Suivante</Button>
       </div>
 
     </>
