@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Input, Button } from 'reactstrap';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { NameSession } from '../redux/Reducer';
+import arrowwhite from '../Images/arrowwhite.png';
+import './SessionName.css';
 
 const SessionName = ({ dispatch }) => {
   const [result, setResult] = useState(null);
@@ -19,27 +21,34 @@ const SessionName = ({ dispatch }) => {
   };
 
   return (
-    <div className="SessionNameContent">
-      <h1 className="SessionName">
-        Donnez un nom a vôtre session de jeu !
-      </h1>
-      <div className="form-data DivInputSessionName">
-        <Input
-          type="text"
-          id="SessionName"
-          name="SessionName"
-          onChange={onChangeResult}
-          value={result}
-          required
-          placeholder="Nom de la session"
+    <>
+      <Link to="/home" className="SessionNameArrow">
+        <img
+          src={arrowwhite}
+          alt="ArrowImgTP"
+          className="ArrowImgTP"
         />
-      </div>
-      <div className="form-data BtnLoginGroupe">
+      </Link>
+      <div className="SessionNameContent">
+        <h1 className="SessionNameTitle">
+          Donnez un nom a vôtre session de jeu !
+        </h1>
+        <div className="form-data DivInputSessionName">
+          <Input
+            type="text"
+            id="SessionName"
+            name="SessionName"
+            onChange={onChangeResult}
+            value={result}
+            required
+            placeholder="Nom de la session"
+          />
+        </div>
         <Button className="BtnSessionName" onClick={() => history.push('/debutjeu')}>
           Let&apos;s go !
         </Button>
       </div>
-    </div>
+    </>
   );
 };
 
