@@ -32,7 +32,7 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
           </p>
           vs
           <br />
-            {props.NameSession}
+          {props.NameSession}
         </p>
       </div>
       <div className="contenuBoutons">
@@ -81,7 +81,6 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
 const mapStateToProps = (state) => ({
   NameSession: state.reducer.NameSession,
 });
-
 
 const ChoixQuestion1 = connect(mapStateToProps)(ChoixQuestionContainer);
 export default ChoixQuestion1;
