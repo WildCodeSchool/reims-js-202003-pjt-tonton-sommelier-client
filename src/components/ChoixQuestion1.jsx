@@ -18,7 +18,7 @@ import france from '../Images/france.png';
 import raisin from '../Images/raisin.png';
 import ProgressBar from './ProgressBar';
 
-function ChoixQuestionContainer({ dispatch }) {
+function ChoixQuestionContainer({ dispatch, ...props }) {
   return (
     <div>
       <Link to="/debutjeu">
@@ -32,7 +32,7 @@ function ChoixQuestionContainer({ dispatch }) {
           </p>
           vs
           <br />
-            {props.NameSession}
+          {props.NameSession}
         </p>
       </div>
       <div className="contenuBoutons">
@@ -78,5 +78,9 @@ function ChoixQuestionContainer({ dispatch }) {
   );
 }
 
-const ChoixQuestion1 = connect()(ChoixQuestionContainer);
+const mapStateToProps = (state) => ({
+  NameSession: state.reducer.NameSession,
+});
+
+const ChoixQuestion1 = connect(mapStateToProps)(ChoixQuestionContainer);
 export default ChoixQuestion1;

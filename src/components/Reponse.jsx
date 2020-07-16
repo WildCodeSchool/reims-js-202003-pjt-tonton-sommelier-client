@@ -19,7 +19,7 @@ function Reponse(props) {
     if (props.token == null) {
       history.push('/login');
     } else {
-      Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
+      Axios.get(`http://localhost:8000/categories/${props.category}/contents/difficulties/${props.dificultie}?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
         .then((response) => {
           setDescriptions(response.data);
         });
@@ -77,6 +77,7 @@ const mapStateToProps = (state) => ({
   answerId: state.reducer.answerId,
   NameSession: state.reducer.NameSession,
   token: state.reducer.token,
+  dificultie: state.reducer.dificultie,
 });
 
 export default connect(mapStateToProps)(Reponse);

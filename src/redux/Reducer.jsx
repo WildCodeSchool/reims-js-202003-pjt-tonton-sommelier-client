@@ -31,12 +31,16 @@ const NameSession = (newNameSession) => ({
 
 const counterScore = (newCounterScore) => ({
   type: 'COUNTER_SCORE',
-  newCounterScore: newCounterScore +1,
+  newCounterScore: newCounterScore + 1,
 });
 
+const setDifficultie = (newDificultie) => ({
+  type: 'CHANGE_DIFICULTIE',
+  newDificultie,
+});
 /* ------------------- Reducer -----------------------*/
 const typeReducer = (state = {
-  type: null, token: null, category: null, answer: null, answerId: null, NameSession: null, score: 0,
+  type: null, token: null, category: null, answer: null, answerId: null, NameSession: null, score: 0, dificultie: 0,
 }, action) => {
   switch (action.type) {
     case 'CHANGE_CATEGORY':
@@ -72,7 +76,12 @@ const typeReducer = (state = {
     case 'COUNTER_SCORE':
       return {
         ...state,
-        score: action.newCounterScore, 
+        score: action.newCounterScore,
+      };
+    case 'CHANGE_DIFICULTIE':
+      return {
+        ...state,
+        dificultie: action.newDificultie,
       };
 
       // other cases
@@ -83,5 +92,5 @@ const typeReducer = (state = {
 
 export default typeReducer;
 export {
-  changeType, changeToken, changeCategory, changeAnswer, anserIdChoosen, NameSession, counterScore, 
+  changeType, changeToken, changeCategory, changeAnswer, anserIdChoosen, NameSession, counterScore, setDifficultie,
 };

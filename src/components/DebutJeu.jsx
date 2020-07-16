@@ -11,7 +11,7 @@ import './DebutDeJeu.css';
 import './Box.css';
 
 import Axios from 'axios';
-import { changeType } from '../redux/Reducer';
+import { changeType, setDifficultie } from '../redux/Reducer';
 
 import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
@@ -50,12 +50,12 @@ function DebutJeuContainer({ dispatch, ...props }) {
       <div className="ButtonContent">
         <div className="RedGreen">
           <div>
-            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1">
+            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1" onClick={() => dispatch(setDifficultie('1')) }>
               <div className="GreenButton" />
             </Link>
           </div>
           <div>
-            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1">
+            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1" onClick={() => dispatch(setDifficultie('2')) }>
               <div className="RedButton" />
             </Link>
           </div>
@@ -97,6 +97,7 @@ const mapStateToProps = (state) => ({
   answerId: state.reducer.answerId,
   NameSession: state.reducer.NameSession,
   token: state.reducer.token,
+  dificultie: state.reducer.dificultie,
 });
 
 const DebutJeu = connect(mapStateToProps)(DebutJeuContainer);
