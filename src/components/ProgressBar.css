@@ -35,3 +35,7 @@ progress::-moz-progress-bar {
 .progressBarReactStrap{
     margin: 0 2rem;
 }
+.progress {
+    background-color: rgb(195, 191, 191) !important;
+    
+}

@@ -46,6 +46,7 @@
 .EyeNose {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .Mouth {
@@ -62,4 +63,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+}
+
+#gray {
+    filter: grayscale(90%)
 }
