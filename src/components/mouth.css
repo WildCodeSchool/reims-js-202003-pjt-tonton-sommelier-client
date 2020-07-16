@@ -1,0 +1,27 @@
+.mouth {
+  margin: 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+text-align: center;
+}
+
+h3 {
+  text-align: center;
+  }
+
+.italics {
+  font-style: italic;
+}
+
+.bolder {
+  font-weight: 900;
+}
+
+.underline{
+  text-decoration: underline;
+}

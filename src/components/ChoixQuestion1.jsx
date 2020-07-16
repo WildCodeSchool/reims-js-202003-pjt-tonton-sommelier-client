@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Link,
-  // useParams,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -17,6 +16,7 @@ import book from '../Images/book.png';
 import couvert from '../Images/couvert.png';
 import france from '../Images/france.png';
 import raisin from '../Images/raisin.png';
+import ProgressBar from './ProgressBar';
 
 function ChoixQuestionContainer({ dispatch, ...props }) {
   return (
@@ -32,7 +32,7 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
           </p>
           vs
           <br />
-            {props.NameSession}
+          {props.NameSession}
         </p>
       </div>
       <div className="contenuBoutons">
@@ -69,6 +69,9 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
               <img src={raisin} alt="raisin" className="BtnImg" />
             </Link>
           </div>
+        </div>
+        <div>
+          <ProgressBar />
         </div>
       </div>
     </div>

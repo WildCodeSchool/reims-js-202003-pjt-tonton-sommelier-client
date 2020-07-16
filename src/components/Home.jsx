@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { changeCategory } from '../redux/Reducer';
 
 import './Home.css';
 import {
   Link,
+  useHistory,
 } from 'react-router-dom';
 import {
   InputGroup,
@@ -13,6 +14,7 @@ import {
   Button,
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Axios from 'axios';
 import {
   faCheck,
 } from '@fortawesome/free-solid-svg-icons';

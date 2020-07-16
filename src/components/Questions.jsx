@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
-import { changeAnswer, anserIdChoosen } from '../redux/Reducer';
+import { changeAnswer, anserIdChoosen, counterScore} from '../redux/Reducer';
 import Timer from './Timer'
 
 function QuestionsContainer({ dispatch, ...props }) {
@@ -18,16 +18,17 @@ function QuestionsContainer({ dispatch, ...props }) {
     if (props.token == null) {
       history.push('/login');
     } else {
-      Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
-        .then((response) => {
-          setDescriptions(response.data);
-        });
+      Axios.get(`http://localhost:8000/categories/${props.category}/contents/difficulties/${props.dificultie}?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
+        .then((response) => { setDescriptions(response.data); })
+        .catch(() => { history.push('/login'); });
     }
-  }, [props.type, props.category, props.token, history]);
+  }, [props.type, props.category, props.token, history, props.dificultie]);
 
   const isCorect = (e, id) => {
+    
     if (e.target.value === '1') {
       dispatch(changeAnswer(true));
+      dispatch(counterScore(props.score * props.dificultie));
     } else {
       dispatch(changeAnswer(false));
     }
@@ -46,7 +47,7 @@ function QuestionsContainer({ dispatch, ...props }) {
         <div className="questionImg">
           {
         props.type != null
-          ? <img className="imageStyle" src={require(`../Images/${props.type}.png`)} alt="" />
+          ? <img className="imageStyle" src={require(`../Images/${props.type}picture.png`)} alt="" />
           : ''
           }
         </div>
@@ -62,7 +63,7 @@ function QuestionsContainer({ dispatch, ...props }) {
           {
           descriptions != null ? descriptions
             .filter((description) => description.choix >= 1 && description.choix <= 3)
-            .map((description) => <button className="button1" type="button" value={description.réponse} onClick={(e) => isCorect(e, description.choix)}>{description.content}</button>)
+            .map((description) => <button className="button1 réponse" type="button" value={description.réponse} onClick={(e) => isCorect(e, description.choix)}>{description.content}</button>)
             : ''
           }
         </div>
@@ -79,6 +80,8 @@ const mapStateToProps = (state) => ({
   answer: state.reducer.answer,
   answerId: state.reducer.answerId,
   token: state.reducer.token,
+  score: state.reducer.score,
+  dificultie: state.reducer.dificultie,
 });
 
 const Questions = connect(mapStateToProps)(QuestionsContainer);
