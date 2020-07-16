@@ -8,6 +8,7 @@ import {
 import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
 import { changeAnswer, anserIdChoosen } from '../redux/Reducer';
+import Timer from './Timer'
 
 function QuestionsContainer({ dispatch, ...props }) {
   const [descriptions, setDescriptions] = useState([]);
@@ -65,8 +66,9 @@ function QuestionsContainer({ dispatch, ...props }) {
             : ''
           }
         </div>
+        <Timer />
       </div>
-
+      
     </>
   );
 }
