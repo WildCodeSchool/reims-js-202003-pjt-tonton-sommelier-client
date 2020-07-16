@@ -11,7 +11,9 @@ import './DebutDeJeu.css';
 import './Box.css';
 
 import Axios from 'axios';
-import { changeType, wineTesting, resetWineTesting, setDifficultie } from '../redux/Reducer';
+import {
+  changeType, wineTesting, resetWineTesting, setDifficultie,
+} from '../redux/Reducer';
 
 import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
@@ -20,7 +22,7 @@ import TontonSodo from '../Images/TontonSodo.png';
 import ProgressBar from './ProgressBar';
 
 function DebutJeuContainer({ dispatch, ...props }) {
-const history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     if (props.token == null) {
@@ -34,7 +36,7 @@ const history = useHistory();
     }
   }, [props.token, history]);
 
-return (
+  return (
     <div>
       <Link to="/sessionname">
         <BorderTopCard />
@@ -47,7 +49,7 @@ return (
           </p>
           vs
           <br />
-            {props.NameSession}
+          {props.NameSession}
         </p>
       </div>
       <div className="ButtonContent">
@@ -60,7 +62,7 @@ return (
                 ? ('gray')
                 : ('')}
           >
-            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1">
+            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1" onClick={() => dispatch(setDifficultie('1'))}>
               <div className="GreenButton" />
             </Link>
           </div>
@@ -72,12 +74,7 @@ return (
                 ? ('gray')
                 : ('')}
           >
-            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1" onClick={() => dispatch(setDifficultie('1')) }>
-              <div className="GreenButton" />
-            </Link>
-          </div>
-          <div>
-            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1" onClick={() => dispatch(setDifficultie('2')) }>
+            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1" onClick={() => dispatch(setDifficultie('2'))}>
               <div className="RedButton" />
             </Link>
           </div>
