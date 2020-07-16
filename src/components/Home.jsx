@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { changeCategory } from '../redux/Reducer';
-
 import './Home.css';
-import {
-  Link,
-  useHistory,
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   InputGroup,
   InputGroupAddon,
@@ -14,34 +9,18 @@ import {
   Button,
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Axios from 'axios';
-import {
-  faCheck,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { changeCategory } from '../redux/Reducer';
 import BorderTopHome from './BorderTopHome';
-import NavBottom from './NavBottom';
 import TontonSommelierTitle from '../Images/TontonSommelierTitle.png';
+import QRHome from '../Images/QRHome.png';
+import home from '../Images/home.png';
+import logout from '../Images/logout.png';
 
-function HomePageContainer({ dispatch, ...props }) {
-  const history = useHistory();
-
-  useEffect(() => {
-    if (props.token == null) {
-      history.push('/login');
-    } else {
-      Axios.get('http://localhost:8000', { headers: { Authorization: `Bearer ${props.token}` } })
-        .then((response) => response.data)
-        .catch(() => {
-          history.push('/login');
-        });
-    }
-  }, [props.token, history]);
-
+function HomePageContainer({ dispatch }) {
   return (
-    <div className="AppContent">
-      <Link to="/" className="LinkRegister">
-        <BorderTopHome />
-      </Link>
+    <>
+      <BorderTopHome />
       <div className="HomeContent">
         <img
           src={TontonSommelierTitle}
@@ -56,9 +35,9 @@ function HomePageContainer({ dispatch, ...props }) {
           </h3>
           <Link className="code QrCodeReaderImg" to="scan">
             <img
-              src="https://static.thenounproject.com/png/1433173-200.png"
+              src={QRHome}
               alt="ArrowImgTP"
-              className="ImgPhoto"
+              className="ImgQr"
             />
           </Link>
           <div className="InputHomeContent">
@@ -71,14 +50,29 @@ function HomePageContainer({ dispatch, ...props }) {
           </div>
         </div>
       </div>
-      <NavBottom />
-    </div>
+      <div className="HomeBottom">
+        <div>
+          <Link to="/home" className="HomeBottomLink">
+            <img
+              src={home}
+              alt="home"
+            />
+            &nbsp;Accueil
+          </Link>
+        </div>
+        <div>
+          <Link to="/login" className="HomeBottomLink">
+            Déconnexion&nbsp;
+            <img
+              src={logout}
+              alt="logout"
+            />
+          </Link>
+        </div>
+      </div>
+    </>
   );
 }
 
-const mapStateToProps = (state) => ({
-  token: state.reducer.token,
-});
-
-const HomePage = connect(mapStateToProps)(HomePageContainer);
+const HomePage = connect()(HomePageContainer);
 export default HomePage;

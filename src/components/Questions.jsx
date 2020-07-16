@@ -7,27 +7,23 @@ import {
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
-import { changeAnswer, anserIdChoosen, counterScore} from '../redux/Reducer';
+import { changeAnswer, anserIdChoosen, counterScore } from '../redux/Reducer';
+import Timer from './Timer';
 
 function QuestionsContainer({ dispatch, ...props }) {
   const [descriptions, setDescriptions] = useState([]);
   const history = useHistory();
 
   useEffect(() => {
-    if (props.token == null) {
-      history.push('/login');
-    } else {
-      Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
-        .then((response) => { setDescriptions(response.data); })
-        .catch(() => { history.push('/login'); });
-    }
-  }, [props.type, props.category, props.token, history]);
+    Axios.get(`http://localhost:8000/categories/${props.category}/contents/difficulties/${props.dificultie}?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
+      .then((response) => { setDescriptions(response.data); })
+      .catch(() => { history.push('/login'); });
+  }, [props.type, props.category, props.token, history, props.dificultie]);
 
   const isCorect = (e, id) => {
-    
     if (e.target.value === '1') {
       dispatch(changeAnswer(true));
-      dispatch(counterScore(props.score));
+      dispatch(counterScore(props.score * props.dificultie));
     } else {
       dispatch(changeAnswer(false));
     }
@@ -66,6 +62,7 @@ function QuestionsContainer({ dispatch, ...props }) {
             : ''
           }
         </div>
+        <Timer />
       </div>
 
     </>
@@ -79,6 +76,7 @@ const mapStateToProps = (state) => ({
   answerId: state.reducer.answerId,
   token: state.reducer.token,
   score: state.reducer.score,
+  dificultie: state.reducer.dificultie,
 });
 
 const Questions = connect(mapStateToProps)(QuestionsContainer);

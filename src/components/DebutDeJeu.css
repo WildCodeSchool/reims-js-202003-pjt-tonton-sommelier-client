@@ -19,14 +19,6 @@
     margin-top: 10vh;
 }
 
-.nomEquipe {
-    text-align: center;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: white;
-    width: 50vw;
-}
-
 .ButtonContent {
     border-radius: 50%;
     width: 36.3447559709242vh;
@@ -34,7 +26,7 @@
     border: 0.726895119418484vh solid #b7b7b7;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30%;
+    margin-top: 10%;
 }
 
 .RedGreen {
@@ -67,4 +59,20 @@
 
 #gray {
     filter: grayscale(90%)
+}
+
+.NameSessionInGame {
+    text-align: center;
+    margin-top: 1.5vh;
+    font-size: 2.2rem;
+}
+
+.TontonVS {
+    color: #a42e49;
+    margin: 0;
+}
+
+.VS {
+    color: #00A19A;
+    margin: 0;
 }

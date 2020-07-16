@@ -42,9 +42,13 @@ const resetWineTesting = (newResetWineTesting) => ({
   newResetWineTesting: newResetWineTesting - 3,
 });
 
+const setDifficultie = (newDificultie) => ({
+  type: 'CHANGE_DIFICULTIE',
+  newDificultie,
+});
 /* ------------------- Reducer -----------------------*/
 const typeReducer = (state = {
-  type: null, token: null, category: null, answer: null, answerId: null, NameSession: null, score: 0, wineTesting: 1,
+  type: null, token: null, category: null, answer: null, answerId: null, NameSession: null, score: 0, wineTesting: 1, dificultie: 0,
 }, action) => {
   switch (action.type) {
     case 'CHANGE_CATEGORY':
@@ -92,6 +96,11 @@ const typeReducer = (state = {
         ...state,
         wineTesting: action.newResetWineTesting,
       };
+    case 'CHANGE_DIFICULTIE':
+      return {
+        ...state,
+        dificultie: action.newDificultie,
+      };
 
       // other cases
     default:
@@ -103,5 +112,5 @@ export default typeReducer;
 export {
   changeType, changeToken, changeCategory, changeAnswer,
   anserIdChoosen, NameSession, counterScore, wineTesting,
-  resetWineTesting,
+  resetWineTesting, setDifficultie,
 };

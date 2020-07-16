@@ -11,7 +11,7 @@ import './DebutDeJeu.css';
 import './Box.css';
 
 import Axios from 'axios';
-import { changeType, wineTesting, resetWineTesting } from '../redux/Reducer';
+import { changeType, wineTesting, resetWineTesting, setDifficultie } from '../redux/Reducer';
 
 import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
@@ -20,7 +20,7 @@ import TontonSodo from '../Images/TontonSodo.png';
 import ProgressBar from './ProgressBar';
 
 function DebutJeuContainer({ dispatch, ...props }) {
-  const history = useHistory();
+const history = useHistory();
 
   useEffect(() => {
     if (props.token == null) {
@@ -34,16 +34,21 @@ function DebutJeuContainer({ dispatch, ...props }) {
     }
   }, [props.token, history]);
 
-  /* if (props.score === 11 || props.score === 33 || props.score === 55 && props.wineTesting === 3 )  {
-    dispatch(wineTesting(0))}
-*/
-  return (
+return (
     <div>
       <Link to="/sessionname">
         <BorderTopCard />
       </Link>
       <div>
-        <h3>{props.NameSession}</h3>
+        <p className="NameSessionInGame">
+          <p className="TontonVS">
+            Tonton Sommelier
+            <br />
+          </p>
+          vs
+          <br />
+            {props.NameSession}
+        </p>
       </div>
       <div className="ButtonContent">
         <div className="RedGreen">
@@ -67,7 +72,12 @@ function DebutJeuContainer({ dispatch, ...props }) {
                 ? ('gray')
                 : ('')}
           >
-            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1">
+            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1" onClick={() => dispatch(setDifficultie('1')) }>
+              <div className="GreenButton" />
+            </Link>
+          </div>
+          <div>
+            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1" onClick={() => dispatch(setDifficultie('2')) }>
               <div className="RedButton" />
             </Link>
           </div>
@@ -138,6 +148,7 @@ const mapStateToProps = (state) => ({
   token: state.reducer.token,
   score: state.reducer.score,
   wineTesting: state.reducer.wineTesting,
+  dificultie: state.reducer.dificultie,
 });
 
 const DebutJeu = connect(mapStateToProps)(DebutJeuContainer);

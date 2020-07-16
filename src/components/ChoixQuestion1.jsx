@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   Link,
-  useHistory,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Axios from 'axios';
 
 import BorderTopCard from './BorderTopCard';
 import './DebutDeJeu.css';
@@ -21,26 +19,21 @@ import raisin from '../Images/raisin.png';
 import ProgressBar from './ProgressBar';
 
 function ChoixQuestionContainer({ dispatch, ...props }) {
-  const history = useHistory();
-
-  useEffect(() => {
-    if (props.token == null) {
-      history.push('/login');
-    } else {
-      Axios.get('http://localhost:8000', { headers: { Authorization: `Bearer ${props.token}` } })
-        .then((response) => response.data)
-        .catch(() => {
-          history.push('/login');
-        });
-    }
-  }, [props.token, history]);
   return (
     <div>
       <Link to="/debutjeu">
         <BorderTopCard />
       </Link>
-      <div className="displayNomEquipe">
-        <div className="nomEquipe">Nom de l'équipe</div>
+      <div>
+        <p className="NameSessionInGame">
+          <p className="TontonVS">
+            Tonton Sommelier
+            <br />
+          </p>
+          vs
+          <br />
+          {props.NameSession}
+        </p>
       </div>
       <div className="contenuBoutons">
         <div className="rougeEtVert">
@@ -86,7 +79,8 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
 }
 
 const mapStateToProps = (state) => ({
-  token: state.reducer.token,
+  NameSession: state.reducer.NameSession,
 });
+
 const ChoixQuestion1 = connect(mapStateToProps)(ChoixQuestionContainer);
 export default ChoixQuestion1;

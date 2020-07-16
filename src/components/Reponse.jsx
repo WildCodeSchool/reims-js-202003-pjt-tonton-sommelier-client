@@ -6,24 +6,20 @@ import {
   useHistory,
 } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
-import BorderTopCard from './BorderTopCard';
 
-function Réponse(props) {
+function Reponse(props) {
   const [descriptions, setDescriptions] = useState(null);
   const history = useHistory();
 
   useEffect(() => {
-    if (props.token == null) {
-      history.push('/login');
-    } else {
-      Axios.get(`http://localhost:8000/categories/${props.category}/contents?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
-        .then((response) => {
-          setDescriptions(response.data);
-        });
-    }
+    Axios.get(`http://localhost:8000/categories/${props.category}/contents/difficulties/${props.dificultie}?type=${props.type}`, { headers: { Authorization: `Bearer ${props.token}` } })
+      .then((response) => {
+        setDescriptions(response.data);
+      });
   }, [props.type, props.category, props.token, history]);
 
   return (
@@ -53,10 +49,13 @@ function Réponse(props) {
             .filter((description) => description.choix >= 1 && description.choix <= 3)
             .map((description) => (
               <div
-                className={`réponse ${description.réponse === 1 ? 'bonneReponse' : ''} ${description.choix === props.answerId && description.réponse !== 1 ? 'answerChoosenFalse' : ''}`} type="button" value={description.réponse}>
+                className={`réponse ${description.réponse === 1 ? 'bonneReponse' : ''} ${description.choix === props.answerId && description.réponse !== 1 ? 'answerChoosenFalse' : ''}`}
+                type="button"
+                value={description.réponse}
+              >
                 {description.content}
                 <div className="iconeCheck">
-                  {description.réponse === 1 ? <FontAwesomeIcon  icon={faCheck} /> : (description.choix === props.answerId && description.réponse !== 1 ? <FontAwesomeIcon icon={faTimes} /> : '')}
+                  {description.réponse === 1 ? <FontAwesomeIcon icon={faCheck} /> : (description.choix === props.answerId && description.réponse !== 1 ? <FontAwesomeIcon icon={faTimes} /> : '')}
                 </div>
               </div>
             ))
@@ -77,6 +76,7 @@ const mapStateToProps = (state) => ({
   answerId: state.reducer.answerId,
   NameSession: state.reducer.NameSession,
   token: state.reducer.token,
+  dificultie: state.reducer.dificultie,
 });
 
-export default connect(mapStateToProps)(Réponse);
+export default connect(mapStateToProps)(Reponse);
