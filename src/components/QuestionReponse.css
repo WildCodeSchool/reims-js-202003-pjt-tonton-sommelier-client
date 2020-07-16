@@ -92,6 +92,7 @@
     align-items: center;
     width: 90vw;
     height: 8vh;
+    margin-bottom: 1rem;
     border-radius: 10px;
     background-color: white;
     color: black;
@@ -106,13 +107,14 @@
     text-align: center;
     justify-content: space-around;
     align-items: center;
-    height: 30vh; 
 }
 
 .explication {
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding: 1vh;
+    max-height: 40vh;
+    overflow: scroll;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin: 1vh;
     border-radius: 0.5rem;

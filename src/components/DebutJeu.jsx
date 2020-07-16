@@ -20,17 +20,6 @@ import TontonSodo from '../Images/TontonSodo.png';
 import ProgressBar from './ProgressBar';
 
 function DebutJeuContainer({ dispatch, ...props }) {
-
-  const history = useHistory();
-
-  useEffect(() => {
-    Axios.get('http://localhost:8000', { headers: { Authorization: `Bearer ${props.token}` } })
-      .then((response) => response.data)
-      .catch(() => {
-        history.push('/login');
-      });
-  }, [props.token, history]);
-
   return (
     <div>
       <Link to="/sessionname">

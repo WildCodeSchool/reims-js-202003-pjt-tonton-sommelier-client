@@ -24,21 +24,7 @@ import QRHome from '../Images/QRHome.png';
 import home from '../Images/home.png';
 import logout from '../Images/logout.png';
 
-function HomePageContainer({ dispatch, ...props }) {
-  const history = useHistory();
-
-  useEffect(() => {
-    if (props.token == null) {
-      history.push('/login');
-    } else {
-      Axios.get('http://localhost:8000', { headers: { Authorization: `Bearer ${props.token}` } })
-        .then((response) => response.data)
-        .catch(() => {
-          history.push('/login');
-        });
-    }
-  }, [props.token, history]);
-
+function HomePageContainer({ dispatch }) {
   return (
     <>
       <BorderTopHome />
@@ -95,9 +81,5 @@ function HomePageContainer({ dispatch, ...props }) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  token: state.reducer.token,
-});
-
-const HomePage = connect(mapStateToProps)(HomePageContainer);
+const HomePage = connect()(HomePageContainer);
 export default HomePage;
