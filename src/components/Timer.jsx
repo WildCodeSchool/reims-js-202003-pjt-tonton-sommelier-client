@@ -5,7 +5,7 @@ import {
 import './timer.css';
 
 function Timer(){
-  const MAX_DURATION = 100;
+  const MAX_DURATION = 30;
   const [counter, setCounter] = useState(MAX_DURATION);
   const history = useHistory();
 
