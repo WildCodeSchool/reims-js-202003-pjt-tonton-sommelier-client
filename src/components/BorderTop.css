@@ -1,5 +1,6 @@
 .BorderTopColor{
     background-color: #00A19A;
+    padding: 0.5rem;
 }
 
 .ArrowImgTP{
@@ -22,7 +23,7 @@
     width: 20%;
 }
 
-#PaddingHome{
+.BorderTopColorHome {
     padding: 3vh;
 }
 

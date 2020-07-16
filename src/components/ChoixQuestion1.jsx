@@ -39,8 +39,16 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
       <Link to="/debutjeu">
         <BorderTopCard />
       </Link>
-      <div className="displayNomEquipe">
-        <div className="nomEquipe">Nom de l'équipe</div>
+      <div>
+        <p className="NameSessionInGame">
+          <p className="TontonVS">
+            Tonton Sommelier
+            <br />
+          </p>
+          vs
+          <br />
+            {props.NameSession}
+        </p>
       </div>
       <div className="contenuBoutons">
         <div className="rougeEtVert">
@@ -87,6 +95,8 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
 
 const mapStateToProps = (state) => ({
   token: state.reducer.token,
+  NameSession: state.reducer.NameSession,
 });
+
 const ChoixQuestion1 = connect(mapStateToProps)(ChoixQuestionContainer);
 export default ChoixQuestion1;

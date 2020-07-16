@@ -4,7 +4,7 @@ import './BorderTop.css';
 function BorderTopHome() {
   return (
     <div className="BorderTopHome">
-      <div className="BorderTopColor" id="PaddingHome" />
+      <div className="BorderTopColor BorderTopColorHome" />
       <div className="ImgCenterBorderTop">
         <img
           width=""

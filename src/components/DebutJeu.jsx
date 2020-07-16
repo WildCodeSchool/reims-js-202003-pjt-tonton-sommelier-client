@@ -41,7 +41,15 @@ function DebutJeuContainer({ dispatch, ...props }) {
         <BorderTopCard />
       </Link>
       <div>
-        <h3>{props.NameSession}</h3>
+        <p className="NameSessionInGame">
+          <p className="TontonVS">
+            Tonton Sommelier
+            <br />
+          </p>
+          vs
+          <br />
+            {props.NameSession}
+        </p>
       </div>
       <div className="ButtonContent">
         <div className="RedGreen">
