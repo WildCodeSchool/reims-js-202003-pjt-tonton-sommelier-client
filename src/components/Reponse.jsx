@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import BorderTopCard from './BorderTopCard';
 
-function Réponse(props) {
+function Reponse(props) {
   const [descriptions, setDescriptions] = useState(null);
   const history = useHistory();
 
@@ -79,4 +79,4 @@ const mapStateToProps = (state) => ({
   token: state.reducer.token,
 });
 
-export default connect(mapStateToProps)(Réponse);
+export default connect(mapStateToProps)(Reponse);
