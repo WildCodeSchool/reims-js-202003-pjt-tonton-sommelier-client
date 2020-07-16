@@ -42,6 +42,7 @@
     font-size: 1.4em;
     padding: 1vh;
     margin-bottom: 2vh;
+    margin-top: 1vh;
 }
 .imageStyle {
     height: 20vh;
@@ -79,7 +80,7 @@
     display: flex;
     text-align: center;
     padding: 1rem;
-    margin-top: 2rem;
+    margin-top: 1vh;
     font-size: 1.8rem;
     border: 0;
 }
@@ -110,12 +111,10 @@
 
 .explication {
     text-align: center;
-    flex-direction: column;
-    align-items: center;
-    border: 2px rgb(177, 177, 177) solid;
-    border-radius: 10px;
-    width: 90vw;
-    height: 20vh;
-    background-color: white;
-    font-size: 1.1rem;
+    font-size: 1.6rem;
+    padding: 1vh;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 1vh;
+    border-radius: 0.5rem;
+    background-color: hsl(204, 47%, 95%);
 }
