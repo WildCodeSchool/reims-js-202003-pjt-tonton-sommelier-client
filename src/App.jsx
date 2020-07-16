@@ -35,19 +35,19 @@ class App extends React.Component {
       <div className="AppContent">
         <Router>
           <Switch>
-            <Route path="/bouche" component={Mouth} />
-            <Route path="/nez" component={Nose} />
-            <Route path="/vue" component={Eyes} />
-            <Route path="/reponse" component={Reponse} />
-            <Route path="/questions" component={Questions} />
+            <Route path="/bouche" component={withAuth(Mouth)} />
+            <Route path="/nez" component={withAuth(Nose)} />
+            <Route path="/vue" component={withAuth(Eyes)} />
+            <Route path="/reponse" component={withAuth(Reponse)} />
+            <Route path="/questions" component={withAuth(Questions)} />
             <Route path="/home" component={withAuth(HomePage)} />
-            <Route path="/boxes/:boxId" component={Box} />
-            <Route path="/descriptions" component={Description} />
+            <Route path="/boxes/:boxId" component={withAuth(Box)} />
+            <Route path="/descriptions" component={withAuth(Description)} />
             <Route path="/register" component={Register} />
             <Route path="/debutjeu" component={withAuth(DebutJeu)} />
-            <Route path="/sessionname" component={SessionNamePage} />
+            <Route path="/sessionname" component={withAuth(SessionNamePage)} />
             <Route path="/login" component={Login} />
-            <Route path="/scan" component={PageScan} />
+            <Route path="/scan" component={withAuth(PageScan)} />
             <Route path="/choixquestion1" component={withAuth(ChoixQuestion1)} />
             <Route path="/" component={Login} />
           </Switch>
