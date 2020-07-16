@@ -1,0 +1,9 @@
+
+.timer {
+  display: flex;
+  width: 65vw;
+  align-items: center;
+  background-color: white;
+  border-radius: 2px;
+
+}
