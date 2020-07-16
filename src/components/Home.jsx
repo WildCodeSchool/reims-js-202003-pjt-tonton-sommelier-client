@@ -17,15 +17,15 @@ import {
   faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 import BorderTopHome from './BorderTopHome';
-import NavBottom from './NavBottom';
 import TontonSommelierTitle from '../Images/TontonSommelierTitle.png';
+import QRHome from '../Images/QRHome.png';
+import home from '../Images/home.png';
+import logout from '../Images/logout.png';
 
-function HomePageContainer({ dispatch}) {
+function HomePageContainer({ dispatch }) {
   return (
-    <div className="AppContent">
-      <Link to="/" className="LinkRegister">
-        <BorderTopHome />
-      </Link>
+    <>
+      <BorderTopHome />
       <div className="HomeContent">
         <img
           src={TontonSommelierTitle}
@@ -40,9 +40,9 @@ function HomePageContainer({ dispatch}) {
           </h3>
           <Link className="code QrCodeReaderImg" to="scan">
             <img
-              src="https://static.thenounproject.com/png/1433173-200.png"
+              src={QRHome}
               alt="ArrowImgTP"
-              className="ImgPhoto"
+              className="ImgQr"
             />
           </Link>
           <div className="InputHomeContent">
@@ -55,8 +55,27 @@ function HomePageContainer({ dispatch}) {
           </div>
         </div>
       </div>
-      <NavBottom />
-    </div>
+      <div className="HomeBottom">
+        <div>
+          <Link to="/home" className="HomeBottomLink">
+            <img
+              src={home}
+              alt="home"
+            />
+            &nbsp;Accueil
+          </Link>
+        </div>
+        <div>
+          <Link to="/login" className="HomeBottomLink">
+            Déconnexion&nbsp;
+            <img
+              src={logout}
+              alt="logout"
+            />
+          </Link>
+        </div>
+      </div>
+    </>
   );
 }
 

@@ -5,7 +5,6 @@ import {
   Link,
   useHistory,
 } from 'react-router-dom';
-import { Button } from 'reactstrap';
 import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
 
