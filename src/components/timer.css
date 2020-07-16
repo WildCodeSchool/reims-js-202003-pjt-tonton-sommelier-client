@@ -1,9 +1,12 @@
+.Timer {
+  background: #eceff1 !important;
+  border-radius: .50rem !important;
+  margin: 0;
+  border: 0;
+}
 
-.timer {
-  display: flex;
-  width: 65vw;
-  align-items: center;
-  background-color: white;
-  border-radius: 2px;
-
+progress::-moz-progress-bar {
+  background: #00A19A;
+  border-radius: .50rem ;
+  padding: 0;
 }
