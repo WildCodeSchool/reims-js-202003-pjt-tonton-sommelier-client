@@ -40,7 +40,7 @@ class App extends React.Component {
             <Route path="/vue" component={Eyes} />
             <Route path="/reponse" component={Reponse} />
             <Route path="/questions" component={Questions} />
-            <Route path="/home" component={HomePage} />
+            <Route path="/home" component={withAuth(HomePage)} />
             <Route path="/boxes/:boxId" component={Box} />
             <Route path="/descriptions" component={Description} />
             <Route path="/register" component={Register} />
