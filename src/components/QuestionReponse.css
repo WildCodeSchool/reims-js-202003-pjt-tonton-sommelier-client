@@ -113,6 +113,8 @@
     text-align: center;
     font-size: 1.4rem;
     padding: 1vh;
+    max-height: 40vh;
+    overflow: scroll;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin: 1vh;
     border-radius: 0.5rem;
