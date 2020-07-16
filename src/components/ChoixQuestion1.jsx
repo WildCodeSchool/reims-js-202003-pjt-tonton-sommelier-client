@@ -16,6 +16,7 @@ import book from '../Images/book.png';
 import couvert from '../Images/couvert.png';
 import france from '../Images/france.png';
 import raisin from '../Images/raisin.png';
+import ProgressBar from './ProgressBar';
 
 function ChoixQuestionContainer({ dispatch }) {
   return (
@@ -23,8 +24,16 @@ function ChoixQuestionContainer({ dispatch }) {
       <Link to="/debutjeu">
         <BorderTopCard />
       </Link>
-      <div className="displayNomEquipe">
-        <div className="nomEquipe">Nom de l'équipe</div>
+      <div>
+        <p className="NameSessionInGame">
+          <p className="TontonVS">
+            Tonton Sommelier
+            <br />
+          </p>
+          vs
+          <br />
+            {props.NameSession}
+        </p>
       </div>
       <div className="contenuBoutons">
         <div className="rougeEtVert">
@@ -60,6 +69,9 @@ function ChoixQuestionContainer({ dispatch }) {
               <img src={raisin} alt="raisin" className="BtnImg" />
             </Link>
           </div>
+        </div>
+        <div>
+          <ProgressBar />
         </div>
       </div>
     </div>

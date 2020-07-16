@@ -6,10 +6,10 @@ import {
   useHistory,
 } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import BorderTopCard from './BorderTopCard';
 import './QuestionReponse.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
-import BorderTopCard from './BorderTopCard';
 
 function Reponse(props) {
   const [descriptions, setDescriptions] = useState(null);
@@ -63,7 +63,7 @@ function Reponse(props) {
             : ''
         }
         </div>
-        <button type="button" className="buttonNext" onClick={() => history.push('/debutjeu')}>Question Suivante</button>
+        <Button type="button" className="buttonNext" onClick={() => history.push('/debutjeu')}>Question Suivante</Button>
       </div>
 
     </>

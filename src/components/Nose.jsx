@@ -2,7 +2,6 @@ import React from 'react';
 import './nose.css';
 import {
   Link,
-  useHistory,
 } from 'react-router-dom';
 import BorderTopCard from './BorderTopCard';
 

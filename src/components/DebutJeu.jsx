@@ -17,6 +17,7 @@ import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
 import TontonSodo from '../Images/TontonSodo.png';
+import ProgressBar from './ProgressBar';
 
 function DebutJeuContainer({ dispatch, ...props }) {
 
@@ -36,7 +37,15 @@ function DebutJeuContainer({ dispatch, ...props }) {
         <BorderTopCard />
       </Link>
       <div>
-        <h3>{props.NameSession}</h3>
+        <p className="NameSessionInGame">
+          <p className="TontonVS">
+            Tonton Sommelier
+            <br />
+          </p>
+          vs
+          <br />
+            {props.NameSession}
+        </p>
       </div>
       <div className="ButtonContent">
         <div className="RedGreen">
@@ -72,6 +81,9 @@ function DebutJeuContainer({ dispatch, ...props }) {
               <img src={bouche} alt="bouche" className="BtnImg" />
             </Link>
           </div>
+        </div>
+        <div>
+          <ProgressBar />
         </div>
       </div>
     </div>
