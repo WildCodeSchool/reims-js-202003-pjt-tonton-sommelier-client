@@ -20,12 +20,17 @@
 }
 
 .LinkRegister {
-    color: #00A19A !important;
+    color: #FFF;
+}
+
+.LinkRegister:hover {
+    color: #FFF;
 }
 
 .BtnLoginGroupe {
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
     margin-top: 3vh;
 }
 
