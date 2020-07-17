@@ -23,7 +23,7 @@ function QuestionsContainer({ dispatch, ...props }) {
   const isCorect = (e, id) => {
     if (e.target.value === '1') {
       dispatch(changeAnswer(true));
-      dispatch(counterScore(props.score * props.dificultie));
+      dispatch(counterScore(props.score + (11 * (props.dificultie-1))));
     } else {
       dispatch(changeAnswer(false));
     }
