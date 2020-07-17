@@ -86,11 +86,9 @@ const LoginContainer = ({ dispatch }) => {
           <Button type="submit" className="BtnLogin">
             Connexion
           </Button>
-          <Button className="BtnRegister">
-            <Link to="/register" className="LinkRegister">
-              Créez un compte
-            </Link>
-          </Button>
+          <Link to="/register" className="LinkRegister">
+            Créez un compte
+          </Link>
         </div>
       </form>
     </div>
