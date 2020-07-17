@@ -18,7 +18,7 @@ import {
 import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
-import TontonSodo from '../Images/TontonSodo.png';
+import ImgTontonLogo from '../Images/ImgTontonLogo.png';
 import ProgressBar from './ProgressBar';
 
 function DebutJeuContainer({ dispatch, ...props }) {
@@ -80,7 +80,7 @@ function DebutJeuContainer({ dispatch, ...props }) {
           </div>
         </div>
         <div className="TontonSodoContent">
-          <img src={TontonSodo} alt="TontonSodo" className="TontonSodoImg" />
+          <img src={ImgTontonLogo} alt="ImgTontonLogo" className="TontonSodoImg" />
         </div>
         <div className="EyeNose">
           <div
