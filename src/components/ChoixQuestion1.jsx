@@ -49,7 +49,7 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
           </div>
         </div>
         <div className="plusOneContainer">
-          <div className="plusOneText">+1</div>
+          <div className="plusOneText">{`+${props.dificultie}`}</div>
         </div>
         <div className="oeuilEtNez">
           <div className="CercleBtnStartGame">
@@ -80,6 +80,7 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
 
 const mapStateToProps = (state) => ({
   NameSession: state.reducer.NameSession,
+  dificultie: state.reducer.dificultie,
 });
 
 const ChoixQuestion1 = connect(mapStateToProps)(ChoixQuestionContainer);
