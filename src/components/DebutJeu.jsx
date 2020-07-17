@@ -22,19 +22,6 @@ import ImgTontonLogo from '../Images/ImgTontonLogo.png';
 import ProgressBar from './ProgressBar';
 
 function DebutJeuContainer({ dispatch, ...props }) {
-  const history = useHistory();
-
-  useEffect(() => {
-    if (props.token == null) {
-      history.push('/login');
-    } else {
-      Axios.get('http://localhost:8000', { headers: { Authorization: `Bearer ${props.token}` } })
-        .then((response) => response.data)
-        .catch(() => {
-          history.push('/login');
-        });
-    }
-  }, [props.token, history]);
 
   return (
     <div>
