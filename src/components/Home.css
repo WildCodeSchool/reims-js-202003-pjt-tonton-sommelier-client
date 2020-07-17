@@ -85,6 +85,10 @@ input{
     color: #FFF;
 }
 
+.HomeBottomLink:hover {
+    color: #FFF;
+}
+
 @media screen and (min-width: 768px) {
     .InputHomeContent {
         margin: 6vh;
