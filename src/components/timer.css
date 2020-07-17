@@ -10,3 +10,21 @@ progress::-moz-progress-bar {
   border-radius: .50rem ;
   padding: 0;
 }
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #eceff1 !important;
+  border: 0;
+}
+
+progress::-webkit-progress-bar {
+  background: #eceff1;
+  border-radius: .50rem;
+  border: 0;
+}
+
+progress[value]::-webkit-progress-value {
+  background: #00A19A;
+  border-radius: .50rem ;
+}

@@ -1,12 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { changeCategory } from '../redux/Reducer';
-
 import './Home.css';
-import {
-  Link,
-  useHistory,
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   InputGroup,
   InputGroupAddon,
@@ -14,10 +9,8 @@ import {
   Button,
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Axios from 'axios';
-import {
-  faCheck,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { changeCategory } from '../redux/Reducer';
 import BorderTopHome from './BorderTopHome';
 import TontonSommelierTitle from '../Images/TontonSommelierTitle.png';
 import QRHome from '../Images/QRHome.png';

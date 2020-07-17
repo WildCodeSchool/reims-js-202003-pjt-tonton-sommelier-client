@@ -7,9 +7,10 @@ import winebottle from '../Images/winebottle.png';
 const ProgressBarContainer = ({ dispatch, ...props }) => {
   const [value, setValue] = useState(0);
 
-  useEffect(()=>{
-    setValue(props.score)
-  },[props.score]);
+  useEffect(() => {
+    setValue(props.score);
+  },
+  [props.score]);
 
   return (
     <>
@@ -31,7 +32,7 @@ const ProgressBarContainer = ({ dispatch, ...props }) => {
             className="WineBottle"
           />
         </div>
-        <Progress className="ProgressBar" value={value * 11} max="100" />
+        <Progress className="ProgressBar" value={value} max="100" />
       </div>
     </>
   );

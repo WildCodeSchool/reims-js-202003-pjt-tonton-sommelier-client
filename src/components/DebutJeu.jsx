@@ -11,15 +11,18 @@ import './DebutDeJeu.css';
 import './Box.css';
 
 import Axios from 'axios';
-import { changeType, setDifficultie } from '../redux/Reducer';
+import {
+  changeType, wineTesting, resetWineTesting, setDifficultie,
+} from '../redux/Reducer';
 
 import oeil from '../Images/oeil.png';
 import nez from '../Images/nez.png';
 import bouche from '../Images/bouche.png';
-import TontonSodo from '../Images/TontonSodo.png';
+import ImgTontonLogo from '../Images/ImgTontonLogo.png';
 import ProgressBar from './ProgressBar';
 
 function DebutJeuContainer({ dispatch, ...props }) {
+
   return (
     <div>
       <Link to="/sessionname">
@@ -33,40 +36,81 @@ function DebutJeuContainer({ dispatch, ...props }) {
           </p>
           vs
           <br />
-            {props.NameSession}
+          {props.NameSession}
         </p>
       </div>
       <div className="ButtonContent">
         <div className="RedGreen">
-          <div>
-            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1" onClick={() => dispatch(setDifficultie('1')) }>
+          <div id={props.score === (33) && props.wineTesting !== (0)
+            ? ('gray')
+            : props.score === (66) && props.wineTesting !== (-1)
+              ? ('gray')
+              : props.score === (99) && props.wineTesting !== (-2)
+                ? ('gray')
+                : ('')}
+          >
+            <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1" onClick={() => dispatch(setDifficultie('1'))}>
               <div className="GreenButton" />
             </Link>
           </div>
-          <div>
-            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1" onClick={() => dispatch(setDifficultie('2')) }>
+          <div id={props.score === (33) && props.wineTesting !== (0)
+            ? ('gray')
+            : props.score === (66) && props.wineTesting !== (-1)
+              ? ('gray')
+              : props.score === (99) && props.wineTesting !== (-2)
+                ? ('gray')
+                : ('')}
+          >
+            <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1" onClick={() => dispatch(setDifficultie('2'))}>
               <div className="RedButton" />
             </Link>
           </div>
         </div>
         <div className="TontonSodoContent">
-          <img src={TontonSodo} alt="TontonSodo" className="TontonSodoImg" />
+          <img src={ImgTontonLogo} alt="ImgTontonLogo" className="TontonSodoImg" />
         </div>
         <div className="EyeNose">
-          <div className="CercleBtnStartGame">
-            <Link className="BtnLink" to="/vue" onClick={() => dispatch(changeType('oeil'))}>
+          <div
+            className="CercleBtnStartGame"
+            id={props.score === (33) && props.wineTesting === (1)
+              ? ('')
+              : props.score === (66) && props.wineTesting === (0)
+                ? ('')
+                : props.score === (99) && props.wineTesting === (-1)
+                  ? ('')
+                  : 'gray'}
+          >
+            <Link className="BtnLink" to="/vue" onClick={() => dispatch(changeType('oeil')) && dispatch(wineTesting(props.wineTesting))}>
               <img src={oeil} alt="oeil" className="BtnImg" />
             </Link>
           </div>
-          <div className="CercleBtnStartGame">
-            <Link className="BtnLink" to="/nez" onClick={() => dispatch(changeType('nez'))}>
+          <div
+            className="CercleBtnStartGame"
+            id={props.score === (33) && props.wineTesting === (2)
+              ? ('')
+              : props.score === (66) && props.wineTesting === (1)
+                ? ('')
+                : props.score === (99) && props.wineTesting === (0)
+                  ? ('')
+                  : 'gray'}
+          >
+            <Link className="BtnLink" to="/nez" onClick={() => dispatch(changeType('nez')) && dispatch(wineTesting(props.wineTesting))}>
               <img src={nez} alt="nez" className="BtnImg" />
             </Link>
           </div>
         </div>
         <div className="Mouth">
-          <div className="CercleBtnStartGame">
-            <Link className="BtnLink" to="/bouche" onClick={() => dispatch(changeType('bouche'))}>
+          <div
+            className="CercleBtnStartGame"
+            id={props.score === (33) && props.wineTesting === (3)
+              ? ('')
+              : props.score === (66) && props.wineTesting === (2)
+                ? ('')
+                : props.score === (99) && props.wineTesting === (1)
+                  ? ('')
+                  : 'gray'}
+          >
+            <Link className="BtnLink" to="/bouche" onClick={(e) => dispatch(changeType('bouche')) && dispatch(resetWineTesting(props.wineTesting))}>
               <img src={bouche} alt="bouche" className="BtnImg" />
             </Link>
           </div>
@@ -86,6 +130,8 @@ const mapStateToProps = (state) => ({
   answerId: state.reducer.answerId,
   NameSession: state.reducer.NameSession,
   token: state.reducer.token,
+  score: state.reducer.score,
+  wineTesting: state.reducer.wineTesting,
   dificultie: state.reducer.dificultie,
 });
 
