@@ -59,7 +59,7 @@ function ChoixQuestionContainer({ dispatch, ...props }) {
           </div>
           <div className="CercleBtnStartGame">
             <Link className="BtnLink" to="/questions" onClick={() => dispatch(changeType('france'))}>
-              <img src={france} alt="france" className="BtnImg" />
+              <img src={france} alt="france" className="BtnImg france" />
             </Link>
           </div>
         </div>
