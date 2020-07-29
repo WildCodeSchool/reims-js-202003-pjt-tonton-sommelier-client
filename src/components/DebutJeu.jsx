@@ -50,7 +50,9 @@ function DebutJeuContainer({ dispatch, ...props }) {
                 : ('')}
           >
             <Link className="BtnLink CercleBtnStartGame" to="/choixquestion1" onClick={() => dispatch(setDifficultie('1'))}>
-              <div className="GreenButton" />
+              <div className="GreenButton">
+                <p className="difficult">+1</p>
+              </div>
             </Link>
           </div>
           <div id={props.score === (33) && props.wineTesting !== (0)
@@ -62,7 +64,9 @@ function DebutJeuContainer({ dispatch, ...props }) {
                 : ('')}
           >
             <Link className="BtnLink CercleBtnStartGame CercleBtnStartGameRed" to="/choixquestion1" onClick={() => dispatch(setDifficultie('2'))}>
-              <div className="RedButton" />
+              <div className="RedButton">
+                <p className="difficult">+2</p>
+              </div>
             </Link>
           </div>
         </div>

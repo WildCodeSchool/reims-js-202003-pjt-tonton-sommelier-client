@@ -14,7 +14,7 @@ progress::-moz-progress-bar {
 progress[value] {
   -webkit-appearance: none;
   appearance: none;
-  background: #eceff1 !important;
+  background: rgb(195, 191, 191) !important;
   border: 0;
 }
 

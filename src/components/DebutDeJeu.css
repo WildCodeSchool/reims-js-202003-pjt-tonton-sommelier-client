@@ -33,6 +33,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0.5vh;
+    color: black
 }
 
 .EyeNose {
@@ -73,6 +74,12 @@
 }
 
 .VS {
-    color: #00A19A;
+    background-color: #00A19A;
     margin: 0;
+}
+.difficult {
+    margin: 0;
+    font-size: 2rem;
+    text-shadow: 0px 1px 0px black;
+    color: white;
 }
